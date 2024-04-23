@@ -1,0 +1,9 @@
+name: Notify Microsoft 365
+on: [push] 
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send notification to Microsoft 365
+        run: |
+          curl -H "Content-Type: application/json" -d "{ 'text': '안녕하세요, 오승민팀!' }" https://o365kopo.webhook.office.com/webhookb2/7dd5a9ef-0804-44c6-94d3-b7b3156e05b0@ad21525c-fc0f-4dbc-a403-67ce00add0e4/IncomingWebhook/f8d8605f36b8498b9f6646eaeffd5c0f/1580fd1d-48be-4ed4-aad8-0567b9784892
