@@ -1,9 +1,25 @@
-name: Notify Microsoft 365
-on: [push] 
+name: Detailed Notifications to Microsoft 365
+ 
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    types: [opened, reopened, closed]
+ 
 jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      - name: Send notification to Microsoft 365
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Notify on Push
+        if: github.event_name == 'push'
         run: |
-          curl -H "Content-Type: application/json" -d "{ 'text': '새로운 커밋발생!!' }" ${{secrets.M365_WEBHOOK_URL}}
+          curl -H "Content-Type: application/json" -d "{\"text\": \"🔔 New Push to Main: ${GITHUB_REF} by ${GITHUB_ACTOR}. Commit message: '${{ github.event.commits[0].message }}'.\"}" ${{ secrets.M365_WEBHOOK_URL }}
+        env:
+          GITHUB_REF: ${{ github.ref }}
+          GITHUB_ACTOR: ${{ github.actor }}
+      - name: Notify on Pull Request
+        if: github.event_name == 'pull_request'
+        run: |
+          curl -H "Content-Type: application/json" -d "{\"text\": \"🔔 Pull Request Event: ${{ github.event.pull_request.title }} by ${{ github.event.pull_request.user.login }}. Action: ${{ github.event.action }}, URL: ${{ github.event.pull_request.html_url }}.\"}" ${{ secrets.M365_WEBHOOK_URL }}
