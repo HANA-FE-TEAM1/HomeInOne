@@ -44,11 +44,3 @@ document.addEventListener("mouseup", () => {
 });
 
 /*전원버튼*/
-$("#btn-bg").click(function () {
-  $("#btn-bg").toggleClass("active");
-  if ($("#btn-bg").hasClass("active")) {
-    $("#power-text strong").text("ON").css("color", "#61fc8c");
-  } else {
-    $("#power-text strong").text("OFF").css("color", "#2a2a2a");
-  }
-});

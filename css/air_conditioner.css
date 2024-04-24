@@ -3,23 +3,22 @@
   flex-direction: column;
   align-items: center; /*교차축*/
   justify-content: center; /*주축*/
-  background-color: rgb(230, 224, 218);
+  background-color: rgb(255, 255, 255);
   width: 430px;
   height: 932px;
 }
 /*메인기능 모션 -- 에어컨 S*/
 .container {
-  padding: 5% 1.5rem;
-  max-width: 800px;
+  max-width: 430px;
   width: 100%;
 }
 
 body {
-  width: 100%;
+  width: 430px;
   height: 100vh;
   margin: 0;
   padding: 0;
-  background: rgb(235, 235, 235);
+  background: rgb(255, 255, 255);
 }
 .center {
   width: 100%;
@@ -113,8 +112,8 @@ circle:nth-child(2) {
   stroke-linecap: round;
 }
 .section3 {
-  width: 450px;
-  padding: 10px;
+  width: 430px;
+
   display: flex;
   flex-direction: cloumn;
   align-items: flex-start;
@@ -132,8 +131,8 @@ circle:nth-child(2) {
 }
 
 .section2 {
-  width: 450px;
-  padding: 50px;
+  width: 430px;
+  padding-bottom: 25px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
