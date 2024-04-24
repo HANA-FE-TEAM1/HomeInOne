@@ -52,6 +52,10 @@
 }
 .white-card-body {
   padding: 5px 30px 30px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
 }
 .card-height {
 }
