@@ -48,9 +48,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // 루틴 수정 화면
 document.addEventListener("DOMContentLoaded", () => {
-  const modal = document.getElementById("modalWrap");
+  const routineModal = document.getElementById("routineModalWrap");
   const btns = document.querySelectorAll(".popupBtn"); // 클래스 선택자 사용
-  const closeBtn = document.getElementById("closeBtn");
+  const routineCloseBtn = document.getElementById("routineCloseBtn");
   const modalContent = document.getElementById("modalContent");
   const devices = ["가습기", "냉장고", "세탁기", "에어컨"];
   let currentDeviceIndex = 0; // 현재 활성화된 디바이스 인덱스
@@ -94,18 +94,18 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.setAttribute("data-index", index);
     btn.onclick = () => {
       currentDeviceIndex = parseInt(btn.getAttribute("data-index")); // 클릭된 버튼의 인덱스를 현재 디바이스 인덱스로 설정
-      modal.style.display = "block";
+      routineModal.style.display = "block";
       loadToggles();
     };
   });
 
-  closeBtn.onclick = () => {
-    modal.style.display = "none";
+  routineCloseBtn.onclick = () => {
+    routineModal.style.display = "none";
   };
 
-  window.onclick = (event) => {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  };
+  //   window.onclick = (event) => {
+  //     if (event.target == routineModal) {
+  //       routineModal.style.display = "none";
+  //     }
+  //   };
 });
