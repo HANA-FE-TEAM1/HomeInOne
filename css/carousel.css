@@ -121,8 +121,7 @@ input[type="radio"]:checked {
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  overflow: hidden; /* Enable scroll if needed */
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow: auto;
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
   display: none;
 }
