@@ -1,5 +1,20 @@
 // 루틴 선택 및 최대 하나의 토글만 허용
 document.addEventListener("DOMContentLoaded", function () {
+  const initialStates = [
+    [true, true, false, true], // 가습기
+    [false, false, true, true], // 냉장고
+    [false, true, false, false], // 세탁기
+    [false, true, false, false], // 에어컨
+  ];
+  for (var i = 0; i < 4; i++) {
+    for (var j = 0; j < 4; j++) {
+      // 초기 상태가 설정되지 않았을 경우에만 초기값 설정
+      if (localStorage.getItem(`device${i}_${j}`) === null) {
+        localStorage.setItem(`device${i}_${j}`, initialStates[i][j]);
+      }
+    }
+  }
+
   const toggleButtons = document.querySelectorAll(".toggle-button");
   let activeIndex = localStorage.getItem("activeToggleButtonIndex");
 
