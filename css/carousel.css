@@ -121,12 +121,10 @@ input[type="radio"]:checked {
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  overflow: hidden; /* Enable scroll if needed */
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow: auto;
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
   display: none;
 }
-
 /* 모달 팝업 사이즈는 아래 css 수정하면 됩니다. */
 #modalAirconBody {
   width: 450px; /* Full width */
