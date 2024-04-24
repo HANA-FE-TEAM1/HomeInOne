@@ -1,18 +1,6 @@
-html {
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  background-color: transparent;
-}
-body {
-    margin: 0;
-    background-color: transparent;
-    user-select: none;
-    font-family: sans-serif;
-  }
   #slider {
     position: relative;
-    width: 100%;
+    width: 60%;
     height: 32vw;
     margin: 0;
     font-family: 'Helvetica Neue', sans-serif;
@@ -43,8 +31,6 @@ body {
   }
   
   
-  
-  
   #slider label {
     position: absolute;
     width: 100%;
@@ -62,8 +48,7 @@ body {
     transition: transform 400ms ease;
   }
   #slider label img {
-    width: 100px;
-    height: 100px;
+    width: 60%;
     left: 0;
     top: 0;
     color: white;
