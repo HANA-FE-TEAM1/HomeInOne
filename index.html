@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/routine.css">
 </head>
 <body>
     <div class="wrapper">
@@ -44,21 +45,130 @@
                                 </div>
                             </div>
                 
+                            <!-- routine 박스 -->
                             <div class="white-card">
-                                <div class="white-card-header">
+                                <div class="routine_header">
                                     <div class="main-title">
-                                    <p>루틴</p>
+                                        <p>루틴</p>
                                     </div>
                                 </div>
-                                <div class="white-card-body">
-                                    
+                                <div class="routine-body">
+                                    <!-- 취침모드 -->
+                                    <div class="routine_box">
+                                        <p>취침모드</p>
+                                        <div class="toggle-button"></div>
+                                        <div id="btnWrap">
+                                            <button
+                                                class="popupBtn"
+                                                data-device-index="0"
+                                                src="./images/modify.png"
+                                                style="
+                                                    width: 30px;
+                                                    height: 30px;
+                                                "
+                                            ></button>
+                                        </div>
+                                        <div id="modalWrap">
+                                            <div id="modalBody">
+                                                <span id="closeBtn"
+                                                    >&times;</span
+                                                ><br /><br />
+                                                <div id="modalContent">
+                                                    <!-- 동적으로 채움 (js에 device 배열) -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 취침모드 끝 -->
+
+                                    <!-- 귀가모드 -->
+                                    <div class="routine_box">
+                                        <p>귀가모드</p>
+                                        <div class="toggle-button"></div>
+                                        <div id="btnWrap">
+                                            <button
+                                                class="popupBtn"
+                                                data-device-index="1"
+                                                src="./images/modify.png"
+                                                style="
+                                                    width: 30px;
+                                                    height: 30px;
+                                                "
+                                            ></button>
+                                        </div>
+                                        <div id="modalWrap">
+                                            <div id="modalBody">
+                                                <span id="closeBtn"
+                                                    >&times;</span
+                                                ><br /><br />
+                                                <div id="modalContent">
+                                                    <!-- 동적으로 채움 (js에 device 배열) -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 귀가모드 끝 -->
+
+                                    <!-- 외출모드 -->
+                                    <div class="routine_box">
+                                        <p>외출모드</p>
+                                        <div class="toggle-button"></div>
+                                        <div id="btnWrap">
+                                            <button
+                                                class="popupBtn"
+                                                data-device-index="2"
+                                                src="./images/modify.png"
+                                                style="
+                                                    width: 30px;
+                                                    height: 30px;
+                                                "
+                                            ></button>
+                                        </div>
+                                        <div id="modalWrap">
+                                            <div id="modalBody">
+                                                <span id="closeBtn"
+                                                    >&times;</span
+                                                ><br /><br />
+                                                <div id="modalContent">
+                                                    <!-- 동적으로 채움 (js에 device 배열) -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 외출모드 끝 -->
+
+                                    <!-- 휴가모드 -->
+                                    <div class="routine_box">
+                                        <p>휴가모드</p>
+                                        <div class="toggle-button"></div>
+                                        <div id="btnWrap">
+                                            <button
+                                                class="popupBtn"
+                                                data-device-index="3"
+                                                src="./images/modify.png"
+                                            ></button>
+                                        </div>
+                                        <div id="modalWrap">
+                                            <div id="modalBody">
+                                                <span id="closeBtn"
+                                                    >&times;</span
+                                                ><br /><br />
+                                                <div id="modalContent">
+                                                    <!-- 동적으로 채움 (js에 device 배열) -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 휴가모드 끝 -->
                                 </div>
                             </div>
+                            <!-- routine 박스 끝 -->
                         </div>
                 </div>
             </div>
         </section>
     </div>
 </div>
+<script src="./javascript/routine.js"></script>
 </body>
 </html>
