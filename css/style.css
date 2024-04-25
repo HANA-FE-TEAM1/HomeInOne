@@ -1,14 +1,24 @@
-.body {
+@font-face {
+  font-family: 'IBMPlexSansKR-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+html {
+  font-family: 'IBMPlexSansKR-Regular';
+  background-color: rgb(233, 233, 233);
 }
 .wrapper {
-  background-color: rgb(206, 206, 206);
+  display: flex;
+  justify-content: center;
+  
 }
 .header {
 }
 .container {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
+  width: 90%;
+  margin-right: 10%;
+  margin-left: 10%;
 }
 .row {
   display: flex;
@@ -18,13 +28,17 @@
   display: flex;
   width: 100%;
   justify-content: center;
-  background-color: #7474749d;
+  /* background-color: #7474749d; 
   /* position: fixed;
-    top: 0; */
+    top: 0; */ 
   padding: 10px;
   border-radius: 0;
   margin: 0;
   border-radius: 0;
+}
+
+.header-inner > img {
+  height: 50px;
 }
 
 .col-8 {
@@ -41,7 +55,7 @@
 
 .white-card {
   background-color: #fff;
-  border-radius: 5px;
+  border-radius: 10px;
   width: calc(100%-20px);
   margin-bottom: 1%;
 }

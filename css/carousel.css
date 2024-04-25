@@ -1,7 +1,7 @@
 #slider {
   position: relative;
   width: 60%;
-  height: 32vw;
+  height: 20vw;
   margin: 0;
   font-family: "Helvetica Neue", sans-serif;
   perspective: 1400px;
@@ -38,7 +38,7 @@ input[type="radio"]:checked {
   background-color: white;
   font-size: 70px;
   font-weight: bold;
-  border-radius: 3px;
+  border-radius: 10px;
   cursor: pointer;
   display: flex;
   align-items: center;
