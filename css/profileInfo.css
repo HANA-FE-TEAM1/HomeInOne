@@ -1,0 +1,14 @@
+#weather {
+  display: flex;
+  justify-content: space-between;
+}
+.white-card-header > .main-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.white-card-body #weather {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
