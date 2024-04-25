@@ -25,11 +25,19 @@ window.onload = function () {
 
   const modal1 = document.getElementById("modalAircon");
   const modal2 = document.getElementById("routineModalWrap");
-  const modal3 = document.getElementById("");
+  const modal3 = document.getElementById("addDevice-modalWrap");
+  const modal4 = document.getElementById("addDevice-myModal");
   window.onclick = function (event) {
-    if (event.target == modal1 || event.target == modal2) {
+    if (
+      event.target == modal1 ||
+      event.target == modal2 ||
+      event.target == modal3 ||
+      event.target == modal4
+    ) {
       modal1.style.display = "none";
       modal2.style.display = "none";
+      modal3.style.display = "none";
+      modal4.style.display = "none";
     }
   };
 };
