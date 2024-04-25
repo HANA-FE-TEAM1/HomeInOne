@@ -6,16 +6,19 @@
 }
 html {
   font-family: 'IBMPlexSansKR-Regular';
+  background-color: rgb(233, 233, 233);
 }
 .wrapper {
-  background-color: rgb(233, 233, 233);
+  display: flex;
+  justify-content: center;
+  
 }
 .header {
 }
 .container {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
+  width: 90%;
+  margin-right: 10%;
+  margin-left: 10%;
 }
 .row {
   display: flex;
@@ -52,7 +55,7 @@ html {
 
 .white-card {
   background-color: #fff;
-  border-radius: 5px;
+  border-radius: 10px;
   width: calc(100%-20px);
   margin-bottom: 1%;
 }
