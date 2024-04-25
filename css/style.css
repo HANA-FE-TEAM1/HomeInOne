@@ -1,7 +1,7 @@
 .body {
 }
 .wrapper {
-  background-color: rgb(206, 206, 206);
+  background-color: rgb(233, 233, 233);
 }
 .header {
 }
@@ -18,13 +18,17 @@
   display: flex;
   width: 100%;
   justify-content: center;
-  background-color: #7474749d;
+  /* background-color: #7474749d; 
   /* position: fixed;
-    top: 0; */
+    top: 0; */ 
   padding: 10px;
   border-radius: 0;
   margin: 0;
   border-radius: 0;
+}
+
+.header-inner > img {
+  height: 50px;
 }
 
 .col-8 {
