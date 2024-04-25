@@ -53,12 +53,11 @@ document.addEventListener("mouseup", () => {
   isRotating = false;
 });
 
-/*전원버튼*/
-
+/*타이머*/
 let countdown;
 const timerDisplay = document.querySelector("#countdown");
 const startButton = document.querySelector("#start");
-const timerValueInput = document.querySelector("#timerValue");
+const timerValueInput = document.querySelector("#timer");
 
 function timer(seconds) {
   clearInterval(countdown);
@@ -96,6 +95,7 @@ function displayTimeLeft(seconds) {
 }
 
 startButton.addEventListener("click", () => {
-  const seconds = parseInt(timerValueInput.value);
+  const seconds = parseInt(timerValueInput.value) * 600;
+  console.log(timerValueInput.value);
   timer(seconds);
 });

@@ -169,38 +169,6 @@
   width: 300px;
   height: 150px;
 }
-#windControl {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  width: 200px;
-  height: 150px;
-  position: relative;
-}
-
-#windControl .arrow {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  background-color: #ececec;
-  border: 1px solid #ececec;
-  border-radius: 15%;
-  font-size: 20px;
-  font-weight: 200;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#windControl .plus {
-  top: 0;
-  left: 5px;
-}
-
-#windControl .minus {
-  right: 90px;
-}
 
 .timer-text {
   font-size: 25px;
@@ -231,4 +199,5 @@ select {
   left: 115px;
 }
 
-/*세부기능 모드선택 -- S*/
+/*세부기능 타이머 -- S*/
+/* CLOCK */
