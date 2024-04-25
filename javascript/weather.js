@@ -15,7 +15,6 @@ const getJSON = function (url, callback) {
 
 const getDate = function () {
   let today = new Date();
-
   let month = today.getMonth() + 1; // 월
   let date = today.getDate(); // 날짜
 
@@ -29,8 +28,6 @@ getJSON(
     if (err !== null) {
       alert("예상치 못한 오류 발생." + err);
     } else {
-      console.log(data.weather);
-
       const currTemperature = (document.getElementById(
         "currTemparature"
       ).innerHTML = data.main.temp);

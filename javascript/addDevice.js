@@ -1,16 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("addDevice-modalWrap");
   const btn = document.getElementById("addDevice-popupBtn");
-  const closeBtn = document.getElementById("closeBtn");
+  const closeBtn = document.getElementById("addDevice-closeBtn");
 
   // 모달을 보여주는 이벤트 핸들러
   btn.onclick = () => {
     modal.style.display = "block";
-    loadToggles(); // 토글 버튼 상태 불러오기 및 적용
   };
 
   // 모달을 닫는 이벤트 핸들러
   closeBtn.onclick = () => {
+    console.log("###");
     modal.style.display = "none";
   };
 
@@ -56,6 +56,7 @@ function openModal(imageSrc) {
 // Modal을 닫는 함수
 var span = document.getElementsByClassName("close")[0];
 span.onclick = function () {
+  console.log(span);
   var modal = document.getElementById("addDevice-myModal");
   modal.style.display = "none";
 };

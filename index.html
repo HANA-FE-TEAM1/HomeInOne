@@ -86,18 +86,22 @@
                   <span class="close">&times;</span>
                   <img class="addDevice-modal-content" id="img01" />
                   <div id="addDevice-addAlert">
-                    <span id="addDevice-deviceName"></span>를 추가하시겠습니까?
+                    <span id="addDevice-deviceName"></span>를(을)
+                    추가하시겠습니까?
                   </div>
 
-                  <div class="button-container">
-                    <button onclick="confirmYes()">Yes</button>
-                    <button onclick="confirmNo()">No</button>
+                  <div class="addDevice-button-container">
+                    <button onclick="confirmYes()">예</button>
+                    <button onclick="confirmNo()">아니오</button>
                   </div>
                 </div>
                 <!-- /디바이스 추가 확인 모달 -->
-
-                <span id="closeBtn">&times;</span><br /><br />
                 <div>
+                  <span
+                    id="addDevice-closeBtn"
+                    style="display: flex; justify-content: flex-end"
+                    >&times;</span
+                  ><br /><br />
                   <img
                     src="/images/air-conditioner.png"
                     alt="Image 1"
