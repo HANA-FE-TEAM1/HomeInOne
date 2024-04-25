@@ -20,24 +20,34 @@ window.onload = function () {
 
   /* modal을 닫는 동작을 하는 함수가 전체 중에 하나만 동작해서 앞으로 모달을 닫고 싶으면 아래 3단계를 진행하세요
   1. modal + 숫자 이어서 getElementById("모달창 id") 생성
-  2. if문 조건에 or 로 event.target == modal + 숫자
+  2. else if문 추가
   3. modal+숫자.sytle.display = "none"; */
 
   const modal1 = document.getElementById("modalAircon");
-  const modal2 = document.getElementById("routineModalWrap");
   const modal3 = document.getElementById("addDevice-modalWrap");
   const modal4 = document.getElementById("addDevice-myModal");
+  const modal5 = document.getElementById("routineModalWrap1");
+  const modal6 = document.getElementById("routineModalWrap2");
+  const modal7 = document.getElementById("routineModalWrap3");
+  const modal8 = document.getElementById("routineModalWrap4");
+
   window.onclick = function (event) {
     if (
       event.target == modal1 ||
-      event.target == modal2 ||
       event.target == modal3 ||
-      event.target == modal4
+      event.target == modal4 ||
+      event.target == modal5 ||
+      event.target == modal6 ||
+      event.target == modal7 ||
+      event.target == modal8
     ) {
       modal1.style.display = "none";
-      modal2.style.display = "none";
       modal3.style.display = "none";
       modal4.style.display = "none";
+      modal5.style.display = "none";
+      modal6.style.display = "none";
+      modal7.style.display = "none";
+      modal8.style.display = "none";
     }
   };
 };
