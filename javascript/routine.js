@@ -47,16 +47,78 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // 루틴 수정 화면
-document.addEventListener("DOMContentLoaded", () => {
-  const routineModal = document.getElementById("routineModalWrap");
-  const btns = document.querySelectorAll(".popupBtn"); // 클래스 선택자 사용
-  const routineCloseBtn = document.getElementById("routineCloseBtn");
-  const modalContent = document.getElementById("modalContent");
-  const devices = ["가습기", "냉장고", "세탁기", "에어컨"];
-  let currentDeviceIndex = 0; // 현재 활성화된 디바이스 인덱스
+// document.addEventListener("DOMContentLoaded", () => {
+//   const routineModal = document.getElementById("routineModalWrap");
+//   const btns = document.querySelectorAll(".modeModifyButton");
+//   const routineCloseBtn = document.getElementById("routineCloseBtn");
+//   const modalContent = document.getElementById("modalContent");
+//   const devices = ["가습기", "냉장고", "세탁기", "에어컨"];
+//   let currentDeviceIndex = 0; // 현재 활성화된 디바이스 인덱스
 
-  const loadToggles = () => {
-    modalContent.innerHTML = "";
+//   const loadToggles = () => {
+//     modalContent.innerHTML = "";
+//     devices.forEach((device, index) => {
+//       const contentDiv = document.createElement("div");
+//       contentDiv.classList.add("content");
+
+//       const textSpan = document.createElement("span");
+//       textSpan.textContent = device;
+
+//       const toggleButton = document.createElement("div");
+//       toggleButton.classList.add("toggle-button");
+//       toggleButton.onclick = function () {
+//         toggleDevice(currentDeviceIndex, index); // 현재 디바이스 인덱스와 토글되는 디바이스 인덱스를 전달
+//       };
+
+//       if (
+//         localStorage.getItem(`device${currentDeviceIndex}_${index}`) === "true"
+//       ) {
+//         toggleButton.classList.add("active");
+//       }
+
+//       contentDiv.appendChild(textSpan);
+//       contentDiv.appendChild(toggleButton);
+//       modalContent.appendChild(contentDiv);
+//     });
+//   };
+
+//   const toggleDevice = (deviceIndex, index) => {
+//     const currentState =
+//       localStorage.getItem(`device${deviceIndex}_${index}`) === "true";
+//     localStorage.setItem(`device${deviceIndex}_${index}`, `${!currentState}`);
+//     loadToggles();
+//   };
+
+//   // 각 버튼에 대해 이벤트 리스너 추가하고 인덱스 부여
+//   btns.forEach((btn, index) => {
+//     btn.setAttribute("data-index", index);
+//     btn.onclick = () => {
+//       currentDeviceIndex = parseInt(btn.getAttribute("data-index")); // 클릭된 버튼의 인덱스를 현재 디바이스 인덱스로 설정
+//       routineModal.style.display = "block";
+//       loadToggles();
+//     };
+//   });
+
+//   routineCloseBtn.onclick = () => {
+//     routineModal.style.display = "none";
+//   };
+// });
+document.addEventListener("DOMContentLoaded", () => {
+  const routineModals = [
+    document.getElementById("routineModalWrap1"),
+    document.getElementById("routineModalWrap2"),
+    document.getElementById("routineModalWrap3"),
+    document.getElementById("routineModalWrap4"),
+  ];
+  const btns = document.querySelectorAll(".modeModifyButton");
+  const routineCloseBtns = document.querySelectorAll("#routineCloseBtn");
+  const modalContents = document.querySelectorAll("#modalContent");
+
+  const devices = ["가습기", "냉장고", "세탁기", "에어컨"];
+  let currentRoutineIndex = 0; // 현재 활성화된 루틴 인덱스
+
+  const loadToggles = (modalIndex) => {
+    modalContents[modalIndex].innerHTML = "";
     devices.forEach((device, index) => {
       const contentDiv = document.createElement("div");
       contentDiv.classList.add("content");
@@ -67,45 +129,45 @@ document.addEventListener("DOMContentLoaded", () => {
       const toggleButton = document.createElement("div");
       toggleButton.classList.add("toggle-button");
       toggleButton.onclick = function () {
-        toggleDevice(currentDeviceIndex, index); // 현재 디바이스 인덱스와 토글되는 디바이스 인덱스를 전달
+        toggleDevice(currentRoutineIndex, index, modalIndex); // 현재 루틴 인덱스, 디바이스 인덱스, 모달 인덱스를 전달
       };
 
       if (
-        localStorage.getItem(`device${currentDeviceIndex}_${index}`) === "true"
+        localStorage.getItem(`device${currentRoutineIndex}_${index}`) === "true"
       ) {
         toggleButton.classList.add("active");
       }
 
       contentDiv.appendChild(textSpan);
       contentDiv.appendChild(toggleButton);
-      modalContent.appendChild(contentDiv);
+      modalContents[modalIndex].appendChild(contentDiv);
     });
   };
 
-  const toggleDevice = (deviceIndex, index) => {
+  const toggleDevice = (routineIndex, deviceIndex, modalIndex) => {
     const currentState =
-      localStorage.getItem(`device${deviceIndex}_${index}`) === "true";
-    localStorage.setItem(`device${deviceIndex}_${index}`, `${!currentState}`);
-    loadToggles();
+      localStorage.getItem(`device${routineIndex}_${deviceIndex}`) === "true";
+    localStorage.setItem(
+      `device${routineIndex}_${deviceIndex}`,
+      `${!currentState}`
+    );
+    loadToggles(modalIndex);
   };
 
   // 각 버튼에 대해 이벤트 리스너 추가하고 인덱스 부여
   btns.forEach((btn, index) => {
     btn.setAttribute("data-index", index);
     btn.onclick = () => {
-      currentDeviceIndex = parseInt(btn.getAttribute("data-index")); // 클릭된 버튼의 인덱스를 현재 디바이스 인덱스로 설정
-      routineModal.style.display = "block";
-      loadToggles();
+      currentRoutineIndex = parseInt(btn.getAttribute("data-device-index")); // 클릭된 버튼의 인덱스를 현재 루틴 인덱스로 설정
+      routineModals[index].style.display = "block";
+      loadToggles(index);
     };
   });
-
-  routineCloseBtn.onclick = () => {
-    routineModal.style.display = "none";
-  };
-
-  //   window.onclick = (event) => {
-  //     if (event.target == routineModal) {
-  //       routineModal.style.display = "none";
-  //     }
-  //   };
+  routineCloseBtns.forEach((btn) => {
+    btn.onclick = () => {
+      routineModals.forEach((modal) => {
+        modal.style.display = "none";
+      });
+    };
+  });
 });
