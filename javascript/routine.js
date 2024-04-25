@@ -1,5 +1,20 @@
 // 루틴 선택 및 최대 하나의 토글만 허용
 document.addEventListener("DOMContentLoaded", function () {
+  const initialStates = [
+    [true, true, false, true], // 가습기
+    [false, false, true, true], // 냉장고
+    [false, true, false, false], // 세탁기
+    [false, true, false, false], // 에어컨
+  ];
+  for (var i = 0; i < 4; i++) {
+    for (var j = 0; j < 4; j++) {
+      // 초기 상태가 설정되지 않았을 경우에만 초기값 설정
+      if (localStorage.getItem(`device${i}_${j}`) === null) {
+        localStorage.setItem(`device${i}_${j}`, initialStates[i][j]);
+      }
+    }
+  }
+
   const toggleButtons = document.querySelectorAll(".toggle-button");
   let activeIndex = localStorage.getItem("activeToggleButtonIndex");
 
@@ -33,15 +48,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // 루틴 수정 화면
 document.addEventListener("DOMContentLoaded", () => {
-  const modal = document.getElementById("modalWrap");
-  const btns = document.querySelectorAll(".popupBtn"); // 클래스 선택자 사용
-  const closeBtn = document.getElementById("closeBtn");
-  const modalContent = document.getElementById("modalContent");
-  const devices = ["가습기", "냉장고", "세탁기", "에어컨"];
-  let currentDeviceIndex = 0; // 현재 활성화된 디바이스 인덱스
+  const routineModals = [
+    document.getElementById("routineModalWrap1"),
+    document.getElementById("routineModalWrap2"),
+    document.getElementById("routineModalWrap3"),
+    document.getElementById("routineModalWrap4"),
+  ];
+  const btns = document.querySelectorAll(".modeModifyButton");
+  const routineCloseBtns = document.querySelectorAll("#routineCloseBtn");
+  const modalContents = document.querySelectorAll("#modalContent");
 
-  const loadToggles = () => {
-    modalContent.innerHTML = "";
+  const devices = ["가습기", "냉장고", "세탁기", "에어컨"];
+  let currentRoutineIndex = 0; // 현재 활성화된 루틴 인덱스
+
+  const loadToggles = (modalIndex) => {
+    modalContents[modalIndex].innerHTML = "";
     devices.forEach((device, index) => {
       const contentDiv = document.createElement("div");
       contentDiv.classList.add("content");
@@ -52,45 +73,45 @@ document.addEventListener("DOMContentLoaded", () => {
       const toggleButton = document.createElement("div");
       toggleButton.classList.add("toggle-button");
       toggleButton.onclick = function () {
-        toggleDevice(currentDeviceIndex, index); // 현재 디바이스 인덱스와 토글되는 디바이스 인덱스를 전달
+        toggleDevice(currentRoutineIndex, index, modalIndex); // 현재 루틴 인덱스, 디바이스 인덱스, 모달 인덱스를 전달
       };
 
       if (
-        localStorage.getItem(`device${currentDeviceIndex}_${index}`) === "true"
+        localStorage.getItem(`device${currentRoutineIndex}_${index}`) === "true"
       ) {
         toggleButton.classList.add("active");
       }
 
       contentDiv.appendChild(textSpan);
       contentDiv.appendChild(toggleButton);
-      modalContent.appendChild(contentDiv);
+      modalContents[modalIndex].appendChild(contentDiv);
     });
   };
 
-  const toggleDevice = (deviceIndex, index) => {
+  const toggleDevice = (routineIndex, deviceIndex, modalIndex) => {
     const currentState =
-      localStorage.getItem(`device${deviceIndex}_${index}`) === "true";
-    localStorage.setItem(`device${deviceIndex}_${index}`, `${!currentState}`);
-    loadToggles();
+      localStorage.getItem(`device${routineIndex}_${deviceIndex}`) === "true";
+    localStorage.setItem(
+      `device${routineIndex}_${deviceIndex}`,
+      `${!currentState}`
+    );
+    loadToggles(modalIndex);
   };
 
   // 각 버튼에 대해 이벤트 리스너 추가하고 인덱스 부여
   btns.forEach((btn, index) => {
     btn.setAttribute("data-index", index);
     btn.onclick = () => {
-      currentDeviceIndex = parseInt(btn.getAttribute("data-index")); // 클릭된 버튼의 인덱스를 현재 디바이스 인덱스로 설정
-      modal.style.display = "block";
-      loadToggles();
+      currentRoutineIndex = parseInt(btn.getAttribute("data-device-index")); // 클릭된 버튼의 인덱스를 현재 루틴 인덱스로 설정
+      routineModals[index].style.display = "block";
+      loadToggles(index);
     };
   });
-
-  closeBtn.onclick = () => {
-    modal.style.display = "none";
-  };
-
-  window.onclick = (event) => {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  };
+  routineCloseBtns.forEach((btn) => {
+    btn.onclick = () => {
+      routineModals.forEach((modal) => {
+        modal.style.display = "none";
+      });
+    };
+  });
 });
