@@ -14,7 +14,7 @@
 }
 
 .routine_box {
-  background-color: #f0f0f0; /* 박스의 배경색 */
+  background-color: #daf1ec; /* 박스의 배경색 */
   border: 1px solid #ddd; /* 박스의 테두리 */
   display: flex;
   align-items: center; /* 내용물 수직 중앙 정렬 */
@@ -23,13 +23,16 @@
   border-radius: 10px;
 }
 
-.popupBtn {
+.modeModifyButton {
   width: 30px;
   height: 30px;
 }
 
 /* 모달 스타일 */
-#routineModalWrap {
+#routineModalWrap1,
+#routineModalWrap2,
+#routineModalWrap3,
+#routineModalWrap4 {
   display: none; /* 기본적으로 숨김 */
   position: fixed;
   z-index: 1;
@@ -39,6 +42,12 @@
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
+}
+
+#modalPageTitle {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
 }
 
 #routineModalBody {
