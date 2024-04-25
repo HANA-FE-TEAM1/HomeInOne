@@ -37,7 +37,10 @@
                       <input type="radio" name="slider" id="s3" />
                       <input type="radio" name="slider" id="s4" />
                       <label for="s1" id="slide1"
-                        ><img src="./images/air-conditioner.png" alt=""
+                        ><img
+                          id="imgModalAircon"
+                          src="./images/air-conditioner.png"
+                          alt=""
                       /></label>
                       <label for="s2" id="slide2"
                         ><img src="./images/humidifier.png" alt=""
@@ -49,8 +52,20 @@
                         ><img src="./images/blueplus.webp" alt=""
                       /></label>
                     </div>
-                    <!-- 슬라이더 끝 -->
+
+                    <!--모달-->
+                    <div id="modalAircon">
+                      <div id="modalAirconBody">
+                        <span id="closeBtn"></span>
+                        <embed
+                          style="width: 100%; height: 100%"
+                          src="/air_conditioner.html"
+                        />
+                      </div>
+                    </div>
+                    <!--모달 끝-->
                   </div>
+                  <!-- 슬라이더 끝 -->
                 </div>
               </div>
               <!-- 나의 홈인원 섹션 끝 -->
@@ -60,53 +75,53 @@
                   <button id="addDevice-popupBtn">디바이스 추가하기</button>
                 </div>
               </div>
+            </div>
 
-              <!-- 디바이스 추가 모달 -->
-              <div id="addDevice-modalWrap">
-                <!-- 디바이스 추가 확인 모달  -->
-                <div id="addDevice-modalBody">
-                  <div id="addDevice-myModal" class="modal">
-                    <span class="close">&times;</span>
-                    <img class="addDevice-modal-content" id="img01" />
-                    <div id="addDevice-addAlert">
-                      <span id="addDevice-deviceName"></span>를
-                      추가하시겠습니까?
-                    </div>
-
-                    <div class="button-container">
-                      <button onclick="confirmYes()">Yes</button>
-                      <button onclick="confirmNo()">No</button>
-                    </div>
+            <!-- 디바이스 추가 모달 -->
+            <div id="addDevice-modalWrap">
+              <!-- 디바이스 추가 확인 모달  -->
+              <div id="addDevice-modalBody">
+                <div id="addDevice-myModal" class="modal">
+                  <span class="close">&times;</span>
+                  <img class="addDevice-modal-content" id="img01" />
+                  <div id="addDevice-addAlert">
+                    <span id="addDevice-deviceName"></span>를 추가하시겠습니까?
                   </div>
-                  <!-- /디바이스 추가 확인 모달 -->
 
-                  <span id="closeBtn">&times;</span><br /><br />
-                  <div>
-                    <img
-                      src="/images/air-conditioner.png"
-                      alt="Image 1"
-                      onclick="openModal('/images/air-conditioner.png')"
-                    />
-                    <img
-                      src="/images/humidifier.png"
-                      alt="Image 2"
-                      onclick="openModal('/images/humidifier.png')"
-                    />
-                    <img
-                      src="/images/washing-machine.png"
-                      alt="Image 3"
-                      onclick="openModal('/images/washing-machine.png')"
-                    />
-                    <img
-                      src="images/refridgerator.png"
-                      alt="Image 4"
-                      onclick="openModal('/images/refridgerator.png')"
-                    />
+                  <div class="button-container">
+                    <button onclick="confirmYes()">Yes</button>
+                    <button onclick="confirmNo()">No</button>
                   </div>
                 </div>
+                <!-- /디바이스 추가 확인 모달 -->
+
+                <span id="closeBtn">&times;</span><br /><br />
+                <div>
+                  <img
+                    src="/images/air-conditioner.png"
+                    alt="Image 1"
+                    onclick="openModal('/images/air-conditioner.png')"
+                  />
+                  <img
+                    src="/images/humidifier.png"
+                    alt="Image 2"
+                    onclick="openModal('/images/humidifier.png')"
+                  />
+                  <img
+                    src="/images/washing-machine.png"
+                    alt="Image 3"
+                    onclick="openModal('/images/washing-machine.png')"
+                  />
+                  <img
+                    src="images/refridgerator.png"
+                    alt="Image 4"
+                    onclick="openModal('/images/refridgerator.png')"
+                  />
+                </div>
               </div>
-              <!-- /디바이스 추가 모달 -->
             </div>
+            <!-- /디바이스 추가 모달 -->
+
             <div class="col-4">
               <!-- 프로필 정보 -->
               <div class="white-card">
@@ -238,11 +253,12 @@
               <!-- routine 박스 끝 -->
             </div>
           </div>
+          <script src="./javascript/routine.js"></script>
+          <script src="./javascript/airconditionerModal.js"></script>
+          <script src="./javascript/weather.js"></script>
+          <script src="./javascript/addDevice.js"></script>
         </section>
       </div>
     </div>
-    <script src="./javascript/routine.js"></script>
-    <script src="./javascript/weather.js"></script>
-    <script src="./javascript/addDevice.js"></script>
   </body>
 </html>
