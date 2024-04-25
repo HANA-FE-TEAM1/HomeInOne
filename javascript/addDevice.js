@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 모달을 닫는 이벤트 핸들러
   closeBtn.onclick = () => {
-    console.log("###");
     modal.style.display = "none";
   };
 
@@ -56,7 +55,6 @@ function openModal(imageSrc) {
 // Modal을 닫는 함수
 var span = document.getElementsByClassName("close")[0];
 span.onclick = function () {
-  console.log(span);
   var modal = document.getElementById("addDevice-myModal");
   modal.style.display = "none";
 };
