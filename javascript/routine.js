@@ -47,62 +47,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // 루틴 수정 화면
-// document.addEventListener("DOMContentLoaded", () => {
-//   const routineModal = document.getElementById("routineModalWrap");
-//   const btns = document.querySelectorAll(".modeModifyButton");
-//   const routineCloseBtn = document.getElementById("routineCloseBtn");
-//   const modalContent = document.getElementById("modalContent");
-//   const devices = ["가습기", "냉장고", "세탁기", "에어컨"];
-//   let currentDeviceIndex = 0; // 현재 활성화된 디바이스 인덱스
-
-//   const loadToggles = () => {
-//     modalContent.innerHTML = "";
-//     devices.forEach((device, index) => {
-//       const contentDiv = document.createElement("div");
-//       contentDiv.classList.add("content");
-
-//       const textSpan = document.createElement("span");
-//       textSpan.textContent = device;
-
-//       const toggleButton = document.createElement("div");
-//       toggleButton.classList.add("toggle-button");
-//       toggleButton.onclick = function () {
-//         toggleDevice(currentDeviceIndex, index); // 현재 디바이스 인덱스와 토글되는 디바이스 인덱스를 전달
-//       };
-
-//       if (
-//         localStorage.getItem(`device${currentDeviceIndex}_${index}`) === "true"
-//       ) {
-//         toggleButton.classList.add("active");
-//       }
-
-//       contentDiv.appendChild(textSpan);
-//       contentDiv.appendChild(toggleButton);
-//       modalContent.appendChild(contentDiv);
-//     });
-//   };
-
-//   const toggleDevice = (deviceIndex, index) => {
-//     const currentState =
-//       localStorage.getItem(`device${deviceIndex}_${index}`) === "true";
-//     localStorage.setItem(`device${deviceIndex}_${index}`, `${!currentState}`);
-//     loadToggles();
-//   };
-
-//   // 각 버튼에 대해 이벤트 리스너 추가하고 인덱스 부여
-//   btns.forEach((btn, index) => {
-//     btn.setAttribute("data-index", index);
-//     btn.onclick = () => {
-//       currentDeviceIndex = parseInt(btn.getAttribute("data-index")); // 클릭된 버튼의 인덱스를 현재 디바이스 인덱스로 설정
-//       routineModal.style.display = "block";
-//       loadToggles();
-//     };
-//   });
-
-//   routineCloseBtn.onclick = () => {
-//     routineModal.style.display = "none";
-//   };
-// });
 document.addEventListener("DOMContentLoaded", () => {
   const routineModals = [
     document.getElementById("routineModalWrap1"),
