@@ -24,22 +24,30 @@ window.onload = function () {
   3. modal+숫자.sytle.display = "none"; */
 
   const modal1 = document.getElementById("modalAircon");
-  const modal2 = document.getElementById("routineModalWrap1");
-  const modal3 = document.getElementById("routineModalWrap2");
-  const modal4 = document.getElementById("routineModalWrap3");
-  const modal5 = document.getElementById("routineModalWrap4");
+  const modal3 = document.getElementById("addDevice-modalWrap");
+  const modal4 = document.getElementById("addDevice-myModal");
+  const modal5 = document.getElementById("routineModalWrap1");
+  const modal6 = document.getElementById("routineModalWrap2");
+  const modal7 = document.getElementById("routineModalWrap3");
+  const modal8 = document.getElementById("routineModalWrap4");
 
   window.onclick = function (event) {
-    if (event.target == modal1) {
+    if (
+      event.target == modal1 ||
+      event.target == modal3 ||
+      event.target == modal4 ||
+      event.target == modal5 ||
+      event.target == modal6 ||
+      event.target == modal7 ||
+      event.target == modal8
+    ) {
       modal1.style.display = "none";
-    } else if (event.target == modal2) {
-      modal2.style.display = "none";
-    } else if (event.target == modal3) {
       modal3.style.display = "none";
-    } else if (event.target == modal4) {
       modal4.style.display = "none";
-    } else if (event.target == modal5) {
       modal5.style.display = "none";
+      modal6.style.display = "none";
+      modal7.style.display = "none";
+      modal8.style.display = "none";
     }
   };
 };
