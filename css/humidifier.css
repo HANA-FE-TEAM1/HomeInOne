@@ -1,0 +1,364 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /*교차축*/
+  justify-content: center; /*주축*/
+  background-color: rgb(255, 255, 255);
+  width: 430px;
+  height: 932px;
+}
+/*메인기능 모션 -- 에어컨 S*/
+.container {
+  max-width: 430px;
+  width: 100%;
+}
+
+body {
+  width: 430px;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: rgb(255, 255, 255);
+}
+.center {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slider {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  user-select: none;
+}
+.knob {
+  width: 220px;
+  height: 220px;
+  background: rgb(229, 241, 242);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+}
+.knob .rotator {
+  width: 180px;
+  height: 180px;
+  background: rgb(245, 245, 245);
+  border-radius: 50%;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2), inset 1px 2px 1px white,
+    2px -1px 1px rgba(0, 0, 0, 0.2), -1px 0px 1px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+.knob .text {
+  width: 40px;
+  height: 40px;
+  margin: 0 15px;
+  font-family: poppins;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(57, 55, 53);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pointer {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: calc(50% - 10px);
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transform-origin: 110px 10px;
+  transform: rotate(-45deg);
+}
+.pointer span {
+  font-size: 60px;
+  transform: rotate(180deg) translateX(15px);
+}
+circle {
+  fill: none;
+}
+circle:nth-child(1) {
+  stroke: rgba(0, 0, 0, 0.7);
+  stroke-width: 15px;
+  stroke-dasharray: 660;
+  transform-origin: center;
+  transform: rotate(135deg);
+  stroke-linecap: round;
+}
+circle:nth-child(2) {
+  stroke: rgb(2, 117, 232);
+  stroke-width: 15px;
+  stroke-dasharray: 880;
+  stroke-dashoffset: calc(880 - (660 * 0) / 100);
+  transform-origin: center;
+  transform: rotate(135deg);
+  stroke-linecap: round;
+}
+.section3 {
+  width: 430px;
+
+  display: flex;
+  flex-direction: cloumn;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+/*메이기능 모션 -- 에어컨 E*/
+
+/*냉방 S*/
+#coolingText {
+  font-size: 35px;
+  font-weight: 200;
+  border-bottom: 1px solid black; /* 밑줄처럼 보이는 선 추가 */
+  padding-bottom: 5px; /* 선과 텍스트 사이의 간격 조절 */
+  line-height: 1; /* 텍스트의 높이 조절 */
+}
+
+.section2 {
+  width: 430px;
+  padding-bottom: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+#power-text {
+  color: #2a2a2a;
+  text-shadow: 0 1px 0 #ffba92;
+}
+
+#btn-bg {
+  width: 82px;
+  height: 82px;
+  background: #cdd3c9;
+  border-radius: 41px;
+  margin: 0 auto 20px;
+  border-bottom: 2px solid #2a2a2a;
+  border-top: 2px solid #fff;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+#btn-bg.active {
+  background: #2d3036;
+  border-bottom: 2px solid #ffcab6;
+  border-top: 2px solid #e66847;
+}
+
+#btn-highlight {
+  width: 41px;
+  height: 82px;
+  background: #eee;
+  margin-left: 41px;
+}
+
+.active #btn-highlight {
+  background: #52555d;
+}
+
+#btn-ring {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  border: 10px solid #2a2a2a;
+  top: 10px;
+  left: 10px;
+  border-radius: 31px;
+}
+
+.active #btn-ring {
+  border-color: #61fc8c;
+}
+
+#ring-line {
+  width: 10px;
+  height: 41px;
+  margin: -14px auto;
+  background: #2a2a2a;
+  border-radius: 7px;
+  border-right: 3px solid #eee;
+  border-left: 3px solid #cdd3c9;
+}
+
+.active #ring-line {
+  background: #61fc8c;
+  border-right: 3px solid #52555d;
+  border-left: 3px solid #2d3036;
+}
+
+/*냉방 E*/
+
+/*세부기능 모드선택 -- S*/
+.modeselect {
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.modeselect-text {
+  font-size: 25px;
+  font-weight: 200;
+  padding: 10px;
+  padding-bottom: 5px; /* 선과 텍스트 사이의 간격 조절 */
+  line-height: 1;
+}
+.modeselect > div > button {
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  background-color: #ececec;
+  border: 1px solid #ececec;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.windselect {
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.windselect-text {
+  font-size: 25px;
+  font-weight: 200;
+  padding: 10px;
+  padding-bottom: 5px; /* 선과 텍스트 사이의 간격 조절 */
+  line-height: 1;
+}
+.windselect > div > button {
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  background-color: #ececec;
+  border: 1px solid #ececec;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.windamount-text {
+  font-size: 25px;
+  font-weight: 200;
+  padding: 10px;
+  padding-bottom: 5px; /* 선과 텍스트 사이의 간격 조절 */
+  line-height: 1.5;
+}
+
+.sub3 {
+  width: 300px;
+  height: 150px;
+}
+#windControl {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 200px;
+  height: 150px;
+  position: relative;
+}
+
+#windControl .arrow {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #ececec;
+  border: 1px solid #ececec;
+  border-radius: 15%;
+  font-size: 20px;
+  font-weight: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#windControl .plus {
+  top: 0;
+  left: 5px;
+}
+
+#windControl .minus {
+  right: 90px;
+}
+
+.timer-text {
+  font-size: 25px;
+  font-weight: 200;
+  padding: 10px;
+  padding-bottom: 5px; /* 선과 텍스트 사이의 간격 조절 */
+  line-height: 1;
+}
+.sub4 > select {
+  width: 210px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #ececec;
+  font-size: 15px;
+  color: #333;
+}
+.sub4 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  top: -35px;
+}
+select {
+  position: absolute;
+  left: 115px;
+}
+/*습도조절*/
+#glass {
+  background: rgba(255, 255, 255, 0.5);
+  width: 300px;
+  height: 400px;
+  position: relative;
+  border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+}
+#water {
+  background-image: url("https://priteshgupta.com/demos/fill/waves.png");
+  background-position: top right;
+  position: absolute;
+  bottom: 0px;
+  width: 300px;
+  height: 10em;
+  border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+  -webkit-transition: all 3s ease-out;
+  -moz-transition: all 3s ease-out;
+  -o-transition: all 3s ease-out;
+  transition: all 3s ease-out;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+#glass:hover #water {
+  height: 20em;
+  background-position: top left;
+  -webkit-transition: all 3s ease-out;
+  -moz-transition: all 3s ease-out;
+  -o-transition: all 3s ease-out;
+  transition: all 3s ease-out;
+}
