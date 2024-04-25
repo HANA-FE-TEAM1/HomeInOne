@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/air_conditioner.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <title>DetailedPage</title>
+  </head>
+  <body>
+    <div id="container">
+      <section class="section section2">
+        <span id="coolingText">냉방</span>
+       
+      </section>
+      <section class="section section3">
+        <div class="center">
+          <div class="slider">
+            <div class="knob">
+              <div class="rotator">
+                <div class="text">18°C</div>
+              </div>
+              <div class="pointer">
+                <span class="material-icons"> play_arrow </span>
+              </div>
+            </div>
+            <svg class="progress-bar" width="300" height="300">
+              <circle
+                class="progress-circle"
+                cx="150"
+                cy="150"
+                r="140"
+              ></circle>
+              <circle
+                id="circle2"
+                class="progress-circle"
+                cx="150"
+                cy="150"
+                r="140"
+                style="
+                  stroke: url(#gradient);
+                  stroke-width: 16px;
+                  stroke-linecap: round;
+                "
+              ></circle>
+              <defs>
+                <linearGradient
+                  id="gradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop offset="0%" style="stop-color: rgb(3, 102, 231)" />
+                  <stop offset="50%" style="stop-color: rgb(101, 200, 239)" />
+                  <stop offset="100%" style="stop-color: rgb(192, 235, 235)" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </section>
+      <section class="section section4">
+        <div class="sub1">
+          <div class="modeselect-text">모드 선택</div>
+          <div class="modeselect">
+            <div class="mode1">
+              <button><span class="solomode">솔로</span></button>
+            </div>
+            <div class="mode2">
+              <button><span class="couplemode">커플</span></button>
+            </div>
+            <div class="mode3">
+              <button><span class="familymode">패밀리</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="sub2">
+          <div class="windselect-text">풍속 조절</div>
+          <div class="windselect">
+            <div class="weak">
+              <button><span class="weakwind">약풍</span></button>
+            </div>
+            <div class="natural">
+              <button><span class="naturalwind">자연풍</span></button>
+            </div>
+            <div class="strong">
+              <button><span class="strongwind">강풍</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="sub3">
+          <div class="windamount-text">풍량 조절</div>
+          <div id="windControl">
+            <button class="arrow plus">+</button>
+            <button class="arrow minus">-</button>
+          </div>
+        </div>
+        <div class="sub4">
+          <div class="timer-text">예약</div>
+          <select name="timer" id="timer">
+            <option value="0">없음</option>
+            <option value="1">10분 후</option>
+            <option value="2">20분 후</option>
+            <option value="3">30분 후</option>
+            <option value="4">60분 후</option>
+            <option value="5">120분 후</option>
+        </div>
+      </section>
+    </div>
+    <script src="javascript/air_conditioner.JS"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </body>
+</html>
