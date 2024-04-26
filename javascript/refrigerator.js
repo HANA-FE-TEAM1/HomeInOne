@@ -1,3 +1,4 @@
+/*냉장온도조절*/
 let knob = document.querySelector(".knob");
 let circle = document.getElementById("circle2");
 let pointer = document.querySelector(".pointer");
