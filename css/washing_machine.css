@@ -242,9 +242,9 @@ select {
 .button-clicked {
   background-color: #00c5a3 !important; /* 원하는 색상 코드로 변경 */
   color: #333; /* 원하는 텍스트 색상 코드로 변경 */
-  transition: 0.4s ease;
+  transition: 1s ease;
 }
 
 .button-unclicked {
-  transition: 0.4s ease;
+  transition: 1s ease;
 }
