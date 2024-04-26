@@ -32,7 +32,7 @@
 
 /*습도조절*/
 .section3 {
-  width: 430px;
+  width: 350px;
   padding-bottom: 25px;
   display: flex;
   flex-direction: row;
@@ -41,7 +41,7 @@
 }
 .water {
   position: relative;
-  width: 180px;
+  width: 160px;
   height: 200px;
   background-color: #80c5de;
   box-shadow: inset 0 0 50px #1c637c;
@@ -256,3 +256,36 @@ a .liquid:after {
   left: 26px;
 }
 /*토글 E*/
+
+/*가습기 습도설정 버튼*/
+.btnupdown {
+  background-color: #daf1ec;
+  width: 50px;
+  height: 80px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#increase {
+  background-color: #daf1ec;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333;
+  border-left: 0;
+  border-top: 0;
+
+  transform: rotate(225deg);
+}
+#decrease {
+  background-color: #daf1ec;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333;
+  border-left: 0;
+  border-top: 0;
+
+  transform: rotate(45deg);
+}
+/*가습기 습도설정 버튼 end*/

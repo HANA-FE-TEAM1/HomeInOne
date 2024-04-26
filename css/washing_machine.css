@@ -72,8 +72,8 @@
   width: 100px;
   height: 100px;
   margin: 5px;
-  background-color: #ececec;
-  border: 1px solid #ececec;
+  background-color: #daf1ec;
+  border: 1px solid #daf1ec;
   border-radius: 10px;
   font-size: 20px;
   font-weight: 200;
@@ -97,8 +97,8 @@
   width: 100px;
   height: 100px;
   margin: 5px;
-  background-color: #ececec;
-  border: 1px solid #ececec;
+  background-color: #daf1ec;
+  border: 1px solid #daf1ec;
   border-radius: 10px;
   font-size: 20px;
   font-weight: 200;
@@ -124,7 +124,7 @@
   padding: 10px;
   border: none;
   border-radius: 4px;
-  background-color: #ececec;
+  background-color: #daf1ec;
   font-size: 15px;
   color: #333;
 }
@@ -191,7 +191,7 @@ select {
   min-height: 3rem;
   border-radius: 0.5rem;
   border: 2px solid #b5bfd9;
-  background-color: #fff;
+  background-color: #f3f3f3;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   transition: 0.15s ease;
   cursor: pointer;
@@ -237,4 +237,14 @@ select {
   color: #707070;
   transition: 0.375s ease;
   text-align: center;
+}
+
+.button-clicked {
+  background-color: #00c5a3 !important; /* 원하는 색상 코드로 변경 */
+  color: #333; /* 원하는 텍스트 색상 코드로 변경 */
+  transition: 0.4s ease;
+}
+
+.button-unclicked {
+  transition: 0.4s ease;
 }
