@@ -32,7 +32,7 @@ const rotateKnob = (e) => {
 
       circle.style.strokeDashoffset = `${880 - 660 * progressPercent}`;
 
-      text.innerHTML = `${Math.round((progressPercent * 100) / 8) + 18}°C`;
+      text.innerHTML = `${Math.round(progressPercent * 10)}°C`;
     }
   }
 };

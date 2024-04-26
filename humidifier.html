@@ -21,29 +21,23 @@
   <body>
     <div id="container">
       <section class="section section2">
-        <span id="coolingText">세탁 중</span>
+        <span id="coolingText">습도 설정</span>
       </section>
       <section class="section section3">
-        <div id="glass">
-            <div id="water">
-           
-            </div>
-        </div>
+        <div id="resthumidity-text">50%</div>
+        <div class="water"></div>
+        <div class="btnupdown">
+        <button id="increase">^</button>
+        <button id="decrease">v</button>
+      </div>
       </section>
       <section class="section section4">
         <div class="sub1">
-          <div class="modeselect-text">세탁 모드</div>
-          <div class="modeselect">
-            <div class="mode1">
-              <button><span class="solomode">표준</span></button>
-            </div>
-            <div class="mode2">
-              <button><span class="couplemode">스피드</span></button>
-            </div>
-            <div class="mode3">
-              <button><span class="familymode">섬세</span></button>
-            </div>
-          </div>
+          <div class="restwater">잔여 물 표시</div>
+          <a href="#">
+            <span>70%</span>
+            <div class="liquid"></div>
+          </a>
         </div>
         <div class="sub2">
           <div class="windselect-text">탈수</div>
@@ -78,6 +72,6 @@
         </div>
       </section>
     </div>
-    <script src="javascript/washing_machine.js"></script>
+    <script src="javascript/humidifier.js"></script>
   </body>
 </html>

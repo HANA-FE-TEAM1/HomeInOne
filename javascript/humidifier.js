@@ -1,46 +1,48 @@
-let knob = document.querySelector(".knob");
-let circle = document.getElementById("circle2");
-let pointer = document.querySelector(".pointer");
-let text = document.querySelector(".text");
-let isRotating = false;
+let water = document.querySelector(".water");
+let increaseButton = document.querySelector("#decrease"); // 수정된 부분
+let decreaseButton = document.querySelector("#increase"); // 수정된 부분
+let restHumidityText = document.getElementById("resthumidity-text");
 
-document.addEventListener("mousedown", (e) => {
-  if (e.target.closest(".knob")) {
-    isRotating = true;
+increaseButton.addEventListener("click", () => {
+  let currentHeight = parseFloat(getComputedStyle(water, "::before").height);
+  if (isNaN(currentHeight)) {
+    currentHeight = 0;
+  }
+  water.style.setProperty(
+    "--before-after-height",
+    `${currentHeight / 16 + 1}rem`
+  );
+
+  // Increase the humidity level and update the text
+  let currentHumidity = parseInt(restHumidityText.textContent);
+  if (isNaN(currentHumidity)) {
+    currentHumidity = 0;
+  }
+  if (currentHumidity <= 100) {
+    // 수정된 부분
+    restHumidityText.textContent = `${currentHumidity - 10}%`;
   }
 });
 
-const rotateKnob = (e) => {
-  if (isRotating) {
-    let knobX = knob.getBoundingClientRect().left + knob.clientWidth / 2;
-    let knobY = knob.getBoundingClientRect().top + knob.clientHeight / 2;
-
-    let deltaX = e.clientX - knobX;
-    let deltaY = e.clientY - knobY;
-
-    let angleRad = Math.atan2(deltaY, deltaX);
-    let angleDeg = (angleRad * 180) / Math.PI;
-
-    let rotationAngle = (angleDeg - 135 + 360) % 360;
-    // 최소값과 최대값 사이의 각도로 조정
-    // rotationAngle = Math.max(Math.min(rotationAngle, MAX_ANGLE), MIN_ANGLE);
-
-    if (rotationAngle <= 270) {
-      pointer.style.transform = `rotate(${rotationAngle - 45}deg)`;
-
-      let progressPercent = rotationAngle / 270;
-
-      circle.style.strokeDashoffset = `${880 - 660 * progressPercent}`;
-
-      text.innerHTML = `${Math.round((progressPercent * 100) / 8) + 18}°C`;
-    }
+decreaseButton.addEventListener("click", () => {
+  let currentHeight = parseFloat(getComputedStyle(water, "::before").height);
+  if (isNaN(currentHeight)) {
+    currentHeight = 0;
   }
-};
+  if (currentHeight > 0) {
+    water.style.setProperty(
+      "--before-after-height",
+      `${currentHeight / 16 - 1}rem`
+    );
+  }
 
-document.addEventListener("mousemove", rotateKnob);
-
-document.addEventListener("mouseup", () => {
-  isRotating = false;
+  // Decrease the humidity level and update the text
+  let currentHumidity = parseInt(restHumidityText.textContent);
+  if (isNaN(currentHumidity)) {
+    currentHumidity = 0;
+  }
+  if (currentHumidity >= 0) {
+    // 수정된 부분
+    restHumidityText.textContent = `${currentHumidity + 10}%`;
+  }
 });
-
-/*전원버튼*/
