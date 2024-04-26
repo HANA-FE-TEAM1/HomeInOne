@@ -7,121 +7,8 @@
   width: 430px;
   height: 932px;
 }
-/*메인기능 모션 -- 에어컨 S*/
-.container {
-  max-width: 430px;
-  width: 100%;
-}
 
-body {
-  width: 430px;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  background: rgb(255, 255, 255);
-}
-.center {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.slider {
-  width: 300px;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  user-select: none;
-}
-.knob {
-  width: 220px;
-  height: 220px;
-  background: rgb(229, 241, 242);
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.8;
-}
-.knob .rotator {
-  width: 180px;
-  height: 180px;
-  background: rgb(245, 245, 245);
-  border-radius: 50%;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2), inset 1px 2px 1px white,
-    2px -1px 1px rgba(0, 0, 0, 0.2), -1px 0px 1px rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 1;
-}
-.knob .text {
-  width: 40px;
-  height: 40px;
-  margin: 0 15px;
-  font-family: poppins;
-  font-size: 16px;
-  font-weight: 600;
-  color: rgb(57, 55, 53);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.pointer {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  top: calc(50% - 10px);
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  transform-origin: 110px 10px;
-  transform: rotate(-45deg);
-}
-.pointer span {
-  font-size: 60px;
-  transform: rotate(180deg) translateX(15px);
-}
-circle {
-  fill: none;
-}
-circle:nth-child(1) {
-  stroke: rgba(0, 0, 0, 0.7);
-  stroke-width: 15px;
-  stroke-dasharray: 660;
-  transform-origin: center;
-  transform: rotate(135deg);
-  stroke-linecap: round;
-}
-circle:nth-child(2) {
-  stroke: rgb(2, 117, 232);
-  stroke-width: 15px;
-  stroke-dasharray: 880;
-  stroke-dashoffset: calc(880 - (660 * 0) / 100);
-  transform-origin: center;
-  transform: rotate(135deg);
-  stroke-linecap: round;
-}
-.section3 {
-  width: 430px;
-
-  display: flex;
-  flex-direction: cloumn;
-  align-items: flex-start;
-  justify-content: space-around;
-}
-/*메이기능 모션 -- 에어컨 E*/
-
-/*냉방 S*/
+/* S*/
 #coolingText {
   font-size: 35px;
   font-weight: 200;
@@ -331,34 +218,142 @@ select {
   left: 115px;
 }
 /*습도조절*/
-#glass {
-  background: rgba(255, 255, 255, 0.5);
-  width: 300px;
-  height: 400px;
-  position: relative;
-  border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+.section3 {
+  width: 430px;
+  padding-bottom: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
 }
-#water {
-  background-image: url("https://priteshgupta.com/demos/fill/waves.png");
-  background-position: top right;
+.water {
+  position: relative;
+  width: 180px;
+  height: 200px;
+  background-color: #80c5de;
+  box-shadow: inset 0 0 50px #1c637c;
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+}
+
+.water::before {
+  content: "";
+  width: 200%;
+  height: 200%;
+  background-color: #ececec;
   position: absolute;
-  bottom: 0px;
-  width: 300px;
-  height: 10em;
-  border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
-  -webkit-transition: all 3s ease-out;
-  -moz-transition: all 3s ease-out;
-  -o-transition: all 3s ease-out;
-  transition: all 3s ease-out;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
+  top: -150%;
+  left: -50%;
+  border-radius: 40%;
+  animation: anim 12s linear infinite;
+}
+
+.water::after {
+  content: "";
+  width: 204%;
+  height: 204%;
+  background-color: #ececec80;
+  position: absolute;
+  top: -150%;
+  left: -52%;
+  border-radius: 40%;
+  animation: anim 12s linear infinite;
+  animation-delay: 0.5s;
+}
+.water {
+  --before-after-height: 200%; /* 초기 높이 설정 */
+  border-radius: 15%;
+}
+
+.water::before,
+.water::after {
+  height: var(--before-after-height);
+  transition: height 0.3s ease; /* 애니메이션 효과 적용 */
+}
+
+@keyframes anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*잔여물표시*/
+.restwater {
+  font-size: 25px;
+  font-weight: 200;
+  padding: 10px;
+  padding-bottom: 5px; /* 선과 텍스트 사이의 간격 조절 */
+  line-height: 1;
+}
+a {
+  margin: 10px;
+  box-sizing: border-box;
+  position: relative;
+  padding: 20px 50px;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 200px;
+  overflow: hidden;
   border-radius: 10px;
 }
-#glass:hover #water {
-  height: 20em;
-  background-position: top left;
-  -webkit-transition: all 3s ease-out;
-  -moz-transition: all 3s ease-out;
-  -o-transition: all 3s ease-out;
-  transition: all 3s ease-out;
+a span {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-size: 20px;
+}
+a .liquid {
+  position: absolute;
+  left: 0;
+  top: -80px;
+  width: 100%;
+  height: 200px;
+  background-color: #4973ff;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+  transition: 0.5x;
+}
+a:hover .liquid {
+  animation: fillup 0.125s linear;
+  animation-fill-mode: forwards;
+}
+a .liquid:before,
+a .liquid:after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  background: #000;
+}
+a .liquid:before {
+  border-radius: 45%;
+  background: rgba(20, 20, 20, 1);
+  animation: slosh 5s linear infinite;
+}
+a .liquid:after {
+  border-radius: 40%;
+  background: rgba(20, 20, 20, 0.5);
+  animation: slosh 10s linear infinite;
+}
+@keyframes fillup {
+  0% {
+    top: -80px;
+  }
+  100% {
+    top: -120px;
+  }
+}
+@keyframes slosh {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
 }

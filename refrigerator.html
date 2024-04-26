@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/humidifier.css" />
+    <link rel="stylesheet" href="css/refrigerator.css" />
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
       rel="stylesheet"
@@ -15,69 +15,107 @@
       rel="stylesheet"
     />
 
-
     <title>냉장고</title>
   </head>
   <body>
     <div id="container">
       <section class="section section2">
-        <span id="coolingText">세탁 중</span>
+        <span id="coolingText">냉장 온도</span>
       </section>
       <section class="section section3">
-        <div id="glass">
-            <div id="water">
-           
+        <div class="center">
+          <div class="slider">
+            <div class="knob">
+              <div class="rotator">
+                <div class="text">0°C</div>
+              </div>
+              <div class="pointer">
+                <span class="material-icons"> play_arrow </span>
+              </div>
             </div>
+            <svg class="progress-bar" width="300" height="300">
+              <circle
+                class="progress-circle"
+                cx="150"
+                cy="150"
+                r="140"
+              ></circle>
+              <circle
+                id="circle2"
+                class="progress-circle"
+                cx="150"
+                cy="150"
+                r="140"
+                style="
+                  stroke: url(#gradient);
+                  stroke-width: 16px;
+                  stroke-linecap: round;
+                "
+              ></circle>
+              <defs>
+                <linearGradient
+                  id="gradient"
+                  x1="10%"
+                  y1="10%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop offset="0%" style="stop-color: rgb(118, 170, 238)" />
+                  <stop offset="50%" style="stop-color: rgb(8, 175, 241)" />
+                  <stop offset="100%" style="stop-color: rgb(30, 5, 219)" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
         </div>
       </section>
       <section class="section section4">
         <div class="sub1">
-          <div class="modeselect-text">세탁 모드</div>
-          <div class="modeselect">
-            <div class="mode1">
-              <button><span class="solomode">표준</span></button>
+          <div class="routine_box">
+            <div class="routineBoxWrapper1">
+              <p id="routineTitle">급속 냉동</p>
             </div>
-            <div class="mode2">
-              <button><span class="couplemode">스피드</span></button>
-            </div>
-            <div class="mode3">
-              <button><span class="familymode">섬세</span></button>
+            <div class="routineBoxWrapper2">
+              <div class="toggle-button"></div>
+              <div id="btnWrap"></div>
             </div>
           </div>
         </div>
         <div class="sub2">
-          <div class="windselect-text">탈수</div>
-          <div class="windselect">
-            <div class="weak">
-              <button><span class="weakwind">약</span></button>
+          <div class="routine_box">
+            <div class="routineBoxWrapper1">
+              <p id="routineTitle">저소음모드</p>
             </div>
-            <div class="natural">
-              <button><span class="naturalwind">중</span></button>
-            </div>
-            <div class="strong">
-              <button><span class="strongwind">강</span></button>
+            <div class="routineBoxWrapper2">
+              <div class="toggle-button"></div>
+              <div id="btnWrap"></div>
             </div>
           </div>
         </div>
         <div class="sub3">
-          <div class="windamount-text">온도 조절</div>
-          <div id="windControl">
-            <button class="arrow plus">+</button>
-            <button class="arrow minus">-</button>
+          <div class="routine_box">
+            <div class="routineBoxWrapper1">
+              <p id="routineTitle">김치아삭 모드</p>
+            </div>
+            <div class="routineBoxWrapper2">
+              <div class="toggle-button"></div>
+              <div id="btnWrap"></div>
+            </div>
           </div>
         </div>
         <div class="sub4">
-          <div class="timer-text">예약</div>
-          <select name="timer" id="timer">
-            <option value="0">없음</option>
-            <option value="1">10분 후</option>
-            <option value="2">20분 후</option>
-            <option value="3">30분 후</option>
-            <option value="4">60분 후</option>
-            <option value="5">120분 후</option>
+          <div class="routine_box">
+            <div class="routineBoxWrapper1">
+              <p id="routineTitle">잠금</p>
+            </div>
+            <div class="routineBoxWrapper2">
+              <div class="toggle-button"></div>
+              <div id="btnWrap"></div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
-    <script src="javascript/washing_machine.js"></script>
+    <script src="javascript/refrigerator.js"></script>
   </body>
 </html>

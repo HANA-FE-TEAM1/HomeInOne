@@ -1,17 +1,17 @@
 @font-face {
-  font-family: 'IBMPlexSansKR-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+  font-family: "IBMPlexSansKR-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
 html {
-  font-family: 'IBMPlexSansKR-Regular';
+  font-family: "IBMPlexSansKR-Regular";
   background-color: rgb(233, 233, 233);
 }
 .wrapper {
   display: flex;
   justify-content: center;
-  
 }
 .header {
 }
@@ -30,7 +30,7 @@ html {
   justify-content: center;
   /* background-color: #7474749d; 
   /* position: fixed;
-    top: 0; */ 
+    top: 0; */
   padding: 10px;
   border-radius: 0;
   margin: 0;
