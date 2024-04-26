@@ -226,4 +226,26 @@ circle:nth-child(2) {
 .toggle-button.active::after {
   left: 26px;
 }
+/*잠금버튼*/
+.lock-button {
+  background-image: url("/images/unlock.svg");
+  background-color: #4caf50;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: filter 0.5s ease; /* transition 속성 추가 */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.lock-button.active {
+  filter: hue-rotate(0deg); /* 기본 상태 */
+}
+
+.lock-button.locked {
+  background-image: url("/images/lock.svg");
+  filter: hue-rotate(-120deg); /* 활성화 상태 (빨간색) */
+}
 /*냉장고 모드별 토글 선택 E*/
