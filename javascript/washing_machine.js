@@ -43,4 +43,7 @@ startButton.addEventListener("click", () => {
   const seconds = parseInt(timerValueInput.value) * 600;
   console.log(timerValueInput.value);
   timer(seconds);
+  setTimeout(() => {
+    timerValueInput.value = "0"; // 1초 후 timerValueInput 값을 0으로 설정
+  }, 1000);
 });
