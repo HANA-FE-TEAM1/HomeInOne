@@ -1,7 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("addDevice-modalWrap");
+  const myModal = document.getElementById("addDevice-myModal");
   const btn = document.getElementById("addDevice-popupBtn");
-  const closeBtn = document.getElementById("addDevice-closeBtn");
+  const myModalcloseBtn = document.getElementById("addDevice-myModal-closeBtn");
+  const modalWrapcloseBtn = document.getElementById(
+    "addDevice-modalWrap-closeBtn"
+  );
 
   // 모달을 보여주는 이벤트 핸들러
   btn.onclick = () => {
@@ -9,7 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // 모달을 닫는 이벤트 핸들러
-  closeBtn.onclick = () => {
+  myModalcloseBtn.onclick = () => {
+    myModal.style.display = "none";
+  };
+  modalWrapcloseBtn.onclick = () => {
     modal.style.display = "none";
   };
 
@@ -17,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.onclick = (event) => {
     if (event.target == modal) {
       modal.style.display = "none";
-      const myModal = document.getElementById("addDevice-myModal");
       myModal.style.display = "none";
     }
   };
