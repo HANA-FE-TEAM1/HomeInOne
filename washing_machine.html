@@ -29,11 +29,25 @@
           <div id="minutes">00</div>:
           <div id="seconds">00</div>
         </div>
-        <button id="start">세탁 시작</button>
+        <div id = "start" class="checkbox-wrapper-16">
+          <label class="checkbox-wrapper">
+          <input type="checkbox" class="checkbox-input" />
+          <span class="checkbox-tile">
+          <span class="checkbox-icon">
+          <rect width="256" height="256" fill="none"></rect>
+          <polygon points="72 40 184 40 240 104 128 224 16 104 72 40" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></polygon>
+          <polygon points="177.091 104 128 224 78.909 104 128 40 177.091 104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></polygon>
+          <line x1="16" y1="104" x2="240" y2="104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></line>
+          </svg>
+          </span>
+          <span class="checkbox-label">세탁 시작</span>
+          </span>
+          </label>
+          </div>
       </section>
       <section class="section section4">
         <div class="sub1">
-          <div class="modeselect-text">세탁 모드</div>
+          <div class="modeselect-text">세탁 타입</div>
           <div class="modeselect">
             <div class="mode1">
               <button><span class="solomode">표준</span></button>
@@ -47,7 +61,7 @@
           </div>
         </div>
         <div class="sub2">
-          <div class="windselect-text">탈수</div>
+          <div class="windselect-text">탈수 강도</div>
           <div class="windselect">
             <div class="weak">
               <button><span class="weakwind">약하게</span></button>
@@ -64,7 +78,7 @@
       
         </div>
         <div class="sub4">
-          <div class="timer-text">예약</div>
+          <div class="timer-text">시간</div>
           <select name="timer" id="timer">
             <option value="0">없음</option>
             <option value="1">10</option>
