@@ -76,9 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
         toggleDevice(currentRoutineIndex, index, modalIndex); // 현재 루틴 인덱스, 디바이스 인덱스, 모달 인덱스를 전달
       };
 
-      if (
-        localStorage.getItem(`device${currentRoutineIndex}_${index}`) === "true"
-      ) {
+      if (localStorage.getItem(`device${modalIndex}_${index}`) === "true") {
         toggleButton.classList.add("active");
       }
 
@@ -90,9 +88,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const toggleDevice = (routineIndex, deviceIndex, modalIndex) => {
     const currentState =
-      localStorage.getItem(`device${routineIndex}_${deviceIndex}`) === "true";
+      localStorage.getItem(`device${modalIndex}_${deviceIndex}`) === "true";
     localStorage.setItem(
-      `device${routineIndex}_${deviceIndex}`,
+      `device${modalIndex}_${deviceIndex}`,
       `${!currentState}`
     );
     loadToggles(modalIndex);
