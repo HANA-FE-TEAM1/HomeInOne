@@ -3,7 +3,7 @@ window.onload = function () {
   const btn = document.getElementById("imgModalHumidity");
   const modal = document.getElementById("modalHumidity");
   // const section = document.getElementById("section");
-  const closeBtn = document.getElementById("closeBtn");
+  const closeBtn = document.getElementById("closeBtn2");
 
   btn.onclick = function () {
     console.log("gkgkgkgk");

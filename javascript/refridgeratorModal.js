@@ -3,7 +3,7 @@ window.onload = function () {
   const btn = document.getElementById("imgModalRefridgerator");
   const modal = document.getElementById("modalRefridgerator");
   // const section = document.getElementById("section");
-  const closeBtn = document.getElementById("closeBtn");
+  const closeBtn = document.getElementById("closeBtn3");
 
   btn.onclick = function () {
     console.log("gkgkgkgk");

@@ -3,7 +3,7 @@ window.onload = function () {
   const btn = document.getElementById("imgModalWashingMachine");
   const modal = document.getElementById("modalWashingMachine");
   // const section = document.getElementById("section");
-  const closeBtn = document.getElementById("closeBtn");
+  const closeBtn = document.getElementById("closeBtn4");
 
   btn.onclick = function () {
     console.log("gkgkgkgk");
