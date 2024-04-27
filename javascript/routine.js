@@ -33,7 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
       // 같은 버튼을 다시 클릭하면 비활성화
       if (currentlyActiveIndex === index.toString()) {
         button.classList.remove("active");
-        localStorage.removeItem("activeToggleButtonIndex");
+        localStorage.setItem("activeToggleButtonIndex", -1);
+        // localStorage.removeItem("activeToggleButtonIndex");
       } else {
         // 모든 버튼의 'active' 클래스 제거
         toggleButtons.forEach((btn) => btn.classList.remove("active"));
@@ -41,6 +42,21 @@ document.addEventListener("DOMContentLoaded", function () {
         button.classList.add("active");
         // 로컬 스토리지에 활성화된 버튼의 인덱스 저장
         localStorage.setItem("activeToggleButtonIndex", index);
+
+        console.log(index + "번 활성화");
+        if (index != -1) {
+          console.log("null(-1)이 아니면 if문 들어옴");
+          // 활성화된 토글 버튼 인덱스가 설정되어 있을 때만 실행
+          for (var i = 0; i < 4; i++) {
+            console.log("for문 들어옴");
+            localStorage.setItem(
+              `power${i}`,
+              localStorage.getItem(`device${index}_${i}`) == "true"
+                ? "true"
+                : "false"
+            );
+          }
+        }
       }
     });
   });
@@ -81,6 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // toggle-button 클래스가 적용된 div 생성
       const toggleButton = document.createElement("div");
       toggleButton.classList.add("toggle-button");
+      toggleButton.id = "toggle-button";
       toggleButton.onclick = function () {
         toggleDevice(currentRoutineIndex, index, modalIndex); // 현재 루틴 인덱스, 디바이스 인덱스, 모달 인덱스를 전달
       };
@@ -123,33 +140,4 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     };
   });
-});
-
-const toggles = document.querySelectorAll('.toggle-button')
-
-toggles.forEach((toggle) => {
-  toggle.onclick = () => {
-    console.log('토글 누름');
-    // 활성화된 토글 버튼 인덱스를 로컬 스토리지에서 가져옴
-    const activeToggleButtonIndex = localStorage.getItem(
-      "activeToggleButtonIndex"
-    );
-    console.log(activeToggleButtonIndex);
-    if (activeToggleButtonIndex != null) {
-      console.log("지피티이자식");
-      // 활성화된 토글 버튼 인덱스가 설정되어 있을 때만 실행
-      for (var i = 0; i < 4; i++) {
-        localStorage.setItem(
-          `power${i}`,
-          localStorage.getItem(`device${activeToggleButtonIndex}_${i}`) ===
-            "true"
-            ? "true"
-            : "false"
-        );
-      }
-  
-      // 예시로 `power0` ~ `power3`의 값을 콘솔에 출력
-      // console.log(power0, power1, power2, power3);
-    }
-  }
 });
