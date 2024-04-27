@@ -61,29 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const devices = ["가습기", "냉장고", "세탁기", "에어컨"];
   let currentRoutineIndex = 0; // 현재 활성화된 루틴 인덱스
 
-  // const loadToggles = (modalIndex) => {
-  //   modalContents[modalIndex].innerHTML = "";
-  //   devices.forEach((device, index) => {
-  //     const contentDiv = document.createElement("div");
-  //     contentDiv.classList.add("content");
-
-  //     const textSpan = document.createElement("span");
-  //     textSpan.textContent = device;
-
-  //     const toggleButton = document.createElement("div");
-  //     toggleButton.classList.add("toggle-button");
-  //     toggleButton.onclick = function () {
-  //       toggleDevice(currentRoutineIndex, index, modalIndex);
-  //     };
-
-  //     if (localStorage.getItem(`device${modalIndex}_${index}`) === "true") {
-  //       toggleButton.classList.add("active");
-  //     }
-
-  //     contentDiv.appendChild(textSpan);
-  //     contentDiv.appendChild(toggleButton);
-  //     modalContents[modalIndex].appendChild(contentDiv);
-  //   });
   const loadToggles = (modalIndex) => {
     modalContents[modalIndex].innerHTML = "";
     devices.forEach((device, index) => {
