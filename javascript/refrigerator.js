@@ -81,3 +81,14 @@ if (toggleButton3) {
 } else {
   console.error('No element with class "toggle-button" found');
 }
+
+//잠금 버튼
+let lockButton = document.getElementById("lockButton");
+
+lockButton.addEventListener("click", function () {
+  if (lockButton.classList.contains("locked")) {
+    lockButton.classList.remove("locked");
+  } else {
+    lockButton.classList.add("locked");
+  }
+});
