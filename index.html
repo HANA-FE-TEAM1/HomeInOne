@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/routine.css" />
     <link rel="stylesheet" href="css/carousel.css" />
     <link rel="stylesheet" href="css/addDevice.css" />
+    <link rel="stylesheet" href="css/profileInfo.css" />
   </head>
   <body>
     <div class="wrapper">
@@ -81,70 +82,104 @@
             <div id="addDevice-modalWrap">
               <!-- 디바이스 추가 확인 모달  -->
               <div id="addDevice-modalBody">
+                <div id="addDevice-modalTitle">
+                  <div id="addDevice-modalWrap-closeBtn" style="float: right">
+                    &times;
+                  </div>
+                </div>
+                <div id="addDevice-modalName">가전제품 추가</div>
                 <div id="addDevice-myModal" class="modal">
-                  <span class="close">&times;</span>
-                  <img class="addDevice-modal-content" id="img01" />
-                  <div id="addDevice-addAlert">
-                    <span id="addDevice-deviceName"></span>를 추가하시겠습니까?
+                  <div id="img01-container">
+                    <img class="addDevice-modal-content" id="img01" />
+                    <div id="addDevice-addAlert">
+                      <span id="addDevice-deviceName"></span>를(을)
+                      추가하시겠습니까?
+                    </div>
                   </div>
 
-                  <div class="button-container">
-                    <button onclick="confirmYes()">Yes</button>
-                    <button onclick="confirmNo()">No</button>
+                  <div class="addDevice-button-container">
+                    <button
+                      onclick="confirmYes()"
+                      style="background-color: #82d8c9"
+                    >
+                      예
+                    </button>
+                    <button onclick="confirmNo()">아니오</button>
                   </div>
                 </div>
                 <!-- /디바이스 추가 확인 모달 -->
-
-                <span id="closeBtn">&times;</span><br /><br />
                 <div>
-                  <img
-                    src="/images/air-conditioner.png"
-                    alt="Image 1"
-                    onclick="openModal('/images/air-conditioner.png')"
-                  />
-                  <img
-                    src="/images/humidifier.png"
-                    alt="Image 2"
-                    onclick="openModal('/images/humidifier.png')"
-                  />
-                  <img
-                    src="/images/washing-machine.png"
-                    alt="Image 3"
-                    onclick="openModal('/images/washing-machine.png')"
-                  />
-                  <img
-                    src="images/refridgerator.png"
-                    alt="Image 4"
-                    onclick="openModal('/images/refridgerator.png')"
-                  />
+                  <div id="addDevice-container">
+                    <div class="addDevice-subContainer">
+                      <div
+                        class="addDevice"
+                        onclick="openModal('/images/air-conditioner.png')"
+                      >
+                        <span>에어컨</span>
+                        <img src="/images/air-conditioner.png" alt="Image 1" />
+                      </div>
+                      <div
+                        class="addDevice"
+                        onclick="openModal('/images/humidifier.png')"
+                      >
+                        <span>가습기</span>
+                        <img src="/images/humidifier.png" alt="Image 2" />
+                      </div>
+                    </div>
+                    <div class="addDevice-subContainer">
+                      <div
+                        class="addDevice"
+                        onclick="openModal('/images/washing-machine.png')"
+                      >
+                        <span>세탁기</span>
+                        <img src="/images/washing-machine.png" alt="Image 3" />
+                      </div>
+                      <div
+                        class="addDevice"
+                        onclick="openModal('/images/refridgerator.png')"
+                      >
+                        <span>냉장고</span>
+                        <img src="images/refridgerator.png" alt="Image 4" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
             <!-- /디바이스 추가 모달 -->
-
             <div class="col-4">
               <!-- 프로필 정보 -->
-              <div class="white-card">
+              <div class="white-card profile-info">
                 <div class="white-card-header">
                   <div
                     class="main-title"
                     style="display: flex; justify-content: space-between"
                   >
-                    <span>안녕하세요, Hana님</span>
+                    <span style="font-size: 0.7rem">Welcome HomeInOne,</span>
                     <span id="today"></span>
                   </div>
+                  <div style="font-weight: 500">Hana님!</div>
                 </div>
                 <div
                   class="white-card-body"
-                  style="display: block; padding: 5px 15px 15px 15px"
+                  style="display: block; padding: 5px 20px 15px 20px"
                 >
                   <div
                     id="weather"
                     style="display: flex; justify-content: space-between"
                   >
-                    <span>기온 : <span id="currTemparature"></span>°C</span>
-                    <span>습도 : <span id="currHumidity"></span>%</span>
-                    <span>날씨 : <span id="currDescription"></span></span>
+                    <span>
+                      <img src="images/temperature.svg" alt="" />
+                      <span id="currTemparature"></span>°C</span
+                    >
+                    <span
+                      ><img src="images/humidity.svg" alt="" />
+                      <span id="currHumidity"></span>%</span
+                    >
+                    <span
+                      ><img src="images/weather.svg" alt="" />
+                      <span id="currDescription"></span
+                    ></span>
                   </div>
                 </div>
               </div>
