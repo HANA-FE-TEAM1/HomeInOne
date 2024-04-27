@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("addDevice-modalWrap");
   const myModal = document.getElementById("addDevice-myModal");
-  const btn = document.getElementById("addDevice-popupBtn");
+  const btn = document.getElementById("plus-button");
   const myModalcloseBtn = document.getElementById("addDevice-myModal-closeBtn");
   const modalWrapcloseBtn = document.getElementById(
     "addDevice-modalWrap-closeBtn"
