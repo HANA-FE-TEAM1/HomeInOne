@@ -1,8 +1,9 @@
 
+var refridgerator = document.getElementById("slide3")
+var washingMachine = document.getElementById("slide5")
+var plus = document.getElementById("slide4")
+const modal = document.getElementById("addDevice-modalWrap");
 document.addEventListener("DOMContentLoaded", () => {
-  var refridgerator = document.getElementById("slide3")
-  var washingMachine = document.getElementById("slide5")
-  var plus = document.getElementById("slide4")
   if (!(localStorage.getItem("냉장고")) || !(localStorage.getItem("세탁기"))) {
     plus.style.visibility = "visible";
   }
@@ -12,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem("세탁기")) {
     washingMachine.style.visibility = "visible";
   }
-  const modal = document.getElementById("addDevice-modalWrap");
   const myModal = document.getElementById("addDevice-myModal");
   const btn = document.getElementById("plus-button");
   const myModalcloseBtn = document.getElementById("addDevice-myModal-closeBtn");
@@ -77,7 +77,10 @@ function confirmYes() {
   } else if (deviceName == "세탁기") {
     washingMachine.style.visibility = "visible";
   }
+
+  console.log("@@@@");
   closeModal();
+  modal.style.display = "none";
 }
 
 // "No" 버튼을 클릭했을 때의 동작
