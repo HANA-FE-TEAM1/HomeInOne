@@ -50,6 +50,7 @@
   padding: 20px;
   width: 35%;
   background: white;
+  border-radius: 10px;
 }
 
 /* 모달 컨텐츠 스타일 */
@@ -100,7 +101,15 @@
   margin: 10px 20px 20px 20px;
   border-radius: 10px;
   background-color: #82d8c9;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 .addDevice span {
   margin-top: 20px;
+}
+
+#addDevice-modalName {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-left: 20px;
 }
