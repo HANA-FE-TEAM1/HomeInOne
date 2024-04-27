@@ -39,72 +39,19 @@
   justify-content: space-around;
 }
 
-#power-text {
-  color: #2a2a2a;
-  text-shadow: 0 1px 0 #ffba92;
-}
-
-#btn-bg {
-  width: 82px;
-  height: 82px;
-  background: #cdd3c9;
-  border-radius: 41px;
-  margin: 0 auto 20px;
-  border-bottom: 2px solid #2a2a2a;
-  border-top: 2px solid #fff;
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
-}
-
-#btn-bg.active {
-  background: #2d3036;
-  border-bottom: 2px solid #ffcab6;
-  border-top: 2px solid #e66847;
-}
-
-#btn-highlight {
-  width: 41px;
-  height: 82px;
-  background: #eee;
-  margin-left: 41px;
-}
-
-.active #btn-highlight {
-  background: #52555d;
-}
-
-#btn-ring {
-  position: absolute;
-  width: 42px;
-  height: 42px;
-  border: 10px solid #2a2a2a;
-  top: 10px;
-  left: 10px;
-  border-radius: 31px;
-}
-
-.active #btn-ring {
-  border-color: #61fc8c;
-}
-
-#ring-line {
-  width: 10px;
-  height: 41px;
-  margin: -14px auto;
-  background: #2a2a2a;
-  border-radius: 7px;
-  border-right: 3px solid #eee;
-  border-left: 3px solid #cdd3c9;
-}
-
-.active #ring-line {
-  background: #61fc8c;
-  border-right: 3px solid #52555d;
-  border-left: 3px solid #2d3036;
-}
-
 /*냉방 E*/
+.sub1,
+.sub2,
+.sub3,
+.sub4 {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.section3 {
+  width: 290px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 
 /*세부기능 모드선택 -- S*/
 .modeselect {
@@ -125,8 +72,8 @@
   width: 100px;
   height: 100px;
   margin: 5px;
-  background-color: #ececec;
-  border: 1px solid #ececec;
+  background-color: #daf1ec;
+  border: 1px solid #daf1ec;
   border-radius: 10px;
   font-size: 20px;
   font-weight: 200;
@@ -150,8 +97,8 @@
   width: 100px;
   height: 100px;
   margin: 5px;
-  background-color: #ececec;
-  border: 1px solid #ececec;
+  background-color: #daf1ec;
+  border: 1px solid #daf1ec;
   border-radius: 10px;
   font-size: 20px;
   font-weight: 200;
@@ -163,11 +110,6 @@
   padding: 10px;
   padding-bottom: 5px; /* 선과 텍스트 사이의 간격 조절 */
   line-height: 1.5;
-}
-
-.sub3 {
-  width: 300px;
-  height: 150px;
 }
 
 .timer-text {
@@ -182,7 +124,7 @@
   padding: 10px;
   border: none;
   border-radius: 4px;
-  background-color: #ececec;
+  background-color: #daf1ec;
   font-size: 15px;
   color: #333;
 }
@@ -192,12 +134,117 @@
   align-items: flex-start;
   justify-content: space-between;
   position: relative;
-  top: -35px;
 }
 select {
   position: absolute;
   left: 115px;
 }
-
-/*세부기능 타이머 -- S*/
 /* CLOCK */
+
+/*세탁시작 버튼*/
+.checkbox-wrapper-16 *,
+.checkbox-wrapper-16 *:after,
+.checkbox-wrapper-16 *:before {
+  box-sizing: border-box;
+}
+
+.checkbox-wrapper-16 .checkbox-input {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.checkbox-wrapper-16 .checkbox-input:checked + .checkbox-tile {
+  border-color: #2260ff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  color: #2260ff;
+}
+.checkbox-wrapper-16 .checkbox-input:checked + .checkbox-tile:before {
+  transform: scale(1);
+  opacity: 1;
+  background-color: #2260ff;
+  border-color: #2260ff;
+}
+.checkbox-wrapper-16 .checkbox-input:checked + .checkbox-tile .checkbox-icon,
+.checkbox-wrapper-16 .checkbox-input:checked + .checkbox-tile .checkbox-label {
+  color: #2260ff;
+}
+.checkbox-wrapper-16 .checkbox-input:hover + .checkbox-tile {
+  border-color: #2260ff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 0 0 4px #a1b4ed;
+}
+.checkbox-wrapper-16 .checkbox-input:focus + .checkbox-tile:before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.checkbox-wrapper-16 .checkbox-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: center;
+  width: 20rem;
+  min-height: 3rem;
+  border-radius: 0.5rem;
+  border: 2px solid #b5bfd9;
+  background-color: #f3f3f3;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.15s ease;
+  cursor: pointer;
+  position: relative;
+}
+.checkbox-wrapper-16 .checkbox-tile:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #b5bfd9;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 0.25rem;
+  left: 0.25rem;
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.25s ease;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='192' height='192' fill='%23FFFFFF' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Cpolyline points='216 72.005 104 184 48 128.005' fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='32'%3E%3C/polyline%3E%3C/svg%3E");
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+.checkbox-wrapper-16 .checkbox-tile:hover {
+  border-color: #2260ff;
+}
+.checkbox-wrapper-16 .checkbox-tile:hover:before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.checkbox-wrapper-16 .checkbox-icon {
+  transition: 0.2s ease;
+  color: #494949;
+}
+.checkbox-wrapper-16 .checkbox-icon svg {
+  width: 3rem;
+  height: 3rem;
+}
+
+.checkbox-wrapper-16 .checkbox-label {
+  color: #707070;
+  transition: 0.375s ease;
+  text-align: center;
+}
+
+.button-clicked {
+  background-color: #00c5a3 !important; /* 원하는 색상 코드로 변경 */
+  color: #333; /* 원하는 텍스트 색상 코드로 변경 */
+  transition: 1s ease;
+}
+
+.button-unclicked {
+  transition: 1s ease;
+}
