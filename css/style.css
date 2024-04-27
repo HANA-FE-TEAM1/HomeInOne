@@ -7,7 +7,7 @@
 }
 html {
   font-family: "IBMPlexSansKR-Regular";
-  background-color: #EFFAFF;
+  background-color: #effaff;
 }
 .wrapper {
   display: flex;
@@ -53,10 +53,9 @@ html {
   border-radius: 10px;
   width: calc(100%-20px);
   margin-bottom: 1%;
-
 }
 .white-card-slider {
-  background-color: #F9FFFE;
+  background-color: #f9fffe;
   border-radius: 10px;
   width: calc(100%-20px);
   margin-bottom: 1%;
@@ -65,7 +64,7 @@ html {
 .white-card-header {
   padding: 22px 30px;
 }
-.main-title-slider > p{
+.main-title-slider > p {
   font-size: 20px;
   font-weight: bold;
   margin-top: 0;
@@ -100,4 +99,22 @@ html {
   overflow: auto;
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.9);
+}
+
+#logo-image:hover {
+  transition: opacity 0.5s;
+}
+
+#logo-image {
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+#logo-image.fade-out {
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+#logo-image.fade-in {
+  opacity: 1;
+  transition: opacity 0.2s;
 }
