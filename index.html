@@ -16,7 +16,14 @@
         <header>
           <div class="row">
             <div class="header-inner">
-              <img src="images/logo.svg" alt="" />
+              <img id="logo-image" src="images/logo.svg" alt="" />
+              <!-- <img id="hoveredLogo" src="images/hoveredLogo.svg" alt="" /> -->
+              <!-- <img
+                id="logo-fade-in"
+                src="images/logo.svg"
+                alt=""
+                style="width: 5%"
+              /> -->
             </div>
           </div>
         </header>
@@ -43,7 +50,8 @@
                         ><img
                           id="imgModalAircon"
                           src="./images/air-conditioner.png"
-                          alt="" />
+                          alt=""
+                        />
                         <div class="switch-container">
                           <div class="switch demo4">
                             <input id="power1" type="checkbox" />
@@ -55,7 +63,8 @@
                         ><img
                           id="imgModalHumidity"
                           src="./images/humidifier.png"
-                          alt="" />
+                          alt=""
+                        />
                         <div class="switch-container">
                           <div class="switch demo4">
                             <input id="power2" type="checkbox" />
@@ -67,7 +76,8 @@
                         <img
                           id="imgModalRefridgerator"
                           src="./images/refridgerator.png"
-                          alt="" />
+                          alt=""
+                        />
                         <div class="switch-container">
                           <div class="switch demo4">
                             <input id="power3" type="checkbox" />
@@ -80,13 +90,15 @@
                           class="plus-button"
                           id="plus-button"
                           src="./images/blueplus.webp"
-                          alt="" />
+                          alt=""
+                        />
                       </label>
                       <label for="s5" id="slide5">
                         <img
                           id="imgModalWashingMachine"
                           src="./images/washing-machine.png"
-                          alt="" />
+                          alt=""
+                        />
                         <div class="switch-container">
                           <div class="switch demo4">
                             <input id="power4" type="checkbox" />
@@ -101,7 +113,8 @@
                         <span id="closeBtn"></span>
                         <embed
                           style="width: 100%; height: 100%"
-                          src="/air_conditioner.html" />
+                          src="/air_conditioner.html"
+                        />
                       </div>
                     </div>
                     <div id="modalHumidity">
@@ -109,7 +122,8 @@
                         <span id="closeBtn"></span>
                         <embed
                           style="width: 100%; height: 100%"
-                          src="/humidifier.html" />
+                          src="/humidifier.html"
+                        />
                       </div>
                     </div>
                     <div id="modalRefridgerator">
@@ -117,7 +131,8 @@
                         <span id="closeBtn"></span>
                         <embed
                           style="width: 100%; height: 100%"
-                          src="/refrigerator.html" />
+                          src="/refrigerator.html"
+                        />
                       </div>
                     </div>
                     <div id="modalWashingMachine">
@@ -125,7 +140,8 @@
                         <span id="closeBtn"></span>
                         <embed
                           style="width: 100%; height: 100%"
-                          src="/washing_machine.html" />
+                          src="/washing_machine.html"
+                        />
                       </div>
                     </div>
                     <!--모달 끝-->
@@ -158,7 +174,8 @@
                   <div class="addDevice-button-container">
                     <button
                       onclick="confirmYes()"
-                      style="background-color: #82d8c9">
+                      style="background-color: #82d8c9"
+                    >
                       예
                     </button>
                     <button onclick="confirmNo()">아니오</button>
@@ -170,13 +187,15 @@
                     <div class="addDevice-subContainer">
                       <div
                         class="addDevice"
-                        onclick="openModal('/images/air-conditioner.png')">
+                        onclick="openModal('/images/air-conditioner.png')"
+                      >
                         <span>에어컨</span>
                         <img src="/images/air-conditioner.png" alt="Image 1" />
                       </div>
                       <div
                         class="addDevice"
-                        onclick="openModal('/images/humidifier.png')">
+                        onclick="openModal('/images/humidifier.png')"
+                      >
                         <span>가습기</span>
                         <img src="/images/humidifier.png" alt="Image 2" />
                       </div>
@@ -184,13 +203,15 @@
                     <div class="addDevice-subContainer">
                       <div
                         class="addDevice"
-                        onclick="openModal('/images/washing-machine.png')">
+                        onclick="openModal('/images/washing-machine.png')"
+                      >
                         <span>세탁기</span>
                         <img src="/images/washing-machine.png" alt="Image 3" />
                       </div>
                       <div
                         class="addDevice"
-                        onclick="openModal('/images/refridgerator.png')">
+                        onclick="openModal('/images/refridgerator.png')"
+                      >
                         <span>냉장고</span>
                         <img src="images/refridgerator.png" alt="Image 4" />
                       </div>
@@ -206,7 +227,8 @@
                 <div class="white-card-header">
                   <div
                     class="main-title"
-                    style="display: flex; justify-content: space-between">
+                    style="display: flex; justify-content: space-between"
+                  >
                     <span style="font-size: 0.7rem">Welcome HomeInOne,</span>
                     <span id="today"></span>
                   </div>
@@ -214,10 +236,12 @@
                 </div>
                 <div
                   class="white-card-body"
-                  style="display: block; padding: 5px 20px 15px 20px">
+                  style="display: block; padding: 5px 20px 15px 20px"
+                >
                   <div
                     id="weather"
-                    style="display: flex; justify-content: space-between">
+                    style="display: flex; justify-content: space-between"
+                  >
                     <span>
                       <img src="images/temperature.svg" alt="" />
                       <span id="currTemparature"></span>°C</span
@@ -255,7 +279,8 @@
                           <img
                             class="modeModifyButton"
                             data-device-index="0"
-                            src="./images/modify.png" />
+                            src="./images/modify.png"
+                          />
                         </div>
                       </div>
 
@@ -282,7 +307,8 @@
                           <img
                             class="modeModifyButton"
                             data-device-index="0"
-                            src="./images/modify.png" />
+                            src="./images/modify.png"
+                          />
                         </div>
                       </div>
                       <div id="routineModalWrap2">
@@ -309,7 +335,8 @@
                           <img
                             class="modeModifyButton"
                             data-device-index="0"
-                            src="./images/modify.png" />
+                            src="./images/modify.png"
+                          />
                         </div>
                       </div>
                       <div id="routineModalWrap3">
@@ -335,7 +362,8 @@
                           <img
                             class="modeModifyButton"
                             data-device-index="0"
-                            src="./images/modify.png" />
+                            src="./images/modify.png"
+                          />
                         </div>
                       </div>
                       <div id="routineModalWrap4">
@@ -355,6 +383,15 @@
               <!-- routine 박스 끝 -->
             </div>
           </div>
+          <script src="./javascript/routine.js"></script>
+          <script src="./javascript/airconditionerModal.js"></script>
+          <script src="./javascript/humidifierModal.js"></script>
+          <script src="./javascript/refridgeratorModal.js"></script>
+          <script src="./javascript/washingmachineModal.js"></script>
+          <script src="./javascript/weather.js"></script>
+          <script src="./javascript/addDevice.js"></script>
+          <script src="./javascript/slider.js"></script>
+          <script src="./javascript/logo.js"></script>
         </section>
       </div>
     </div>
