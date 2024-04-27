@@ -234,15 +234,7 @@ input[type="radio"]:checked {
 }
 
 /* 추가시 슬라이드 show; */
-#s3 {
-  visibility: hidden;
-}
-#s4 {
-  visibility: hidden;
-}
-#s5 {
-  visibility: hidden;
-}
+
 #slide3 {
   visibility: hidden;
 }
