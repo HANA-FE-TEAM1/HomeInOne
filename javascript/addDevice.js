@@ -1,4 +1,17 @@
+var refridgerator = document.getElementById("slide3")
+var washingMachine = document.getElementById("slide5")
+var plus = document.getElementById("plus-button")
+
 document.addEventListener("DOMContentLoaded", () => {
+  if (localStorage.getItem("냉장고")) {
+    refridgerator.style.visibility = "visible";
+  }
+  if (localStorage.getItem("세탁기")) {
+    washingMachine.style.visibility = "visible";
+  }
+  if ((localStorage.getItem("냉장고")) && (localStorage.getItem("세탁기"))) {
+    plus.style.visibility = "hidden";
+  }
   const modal = document.getElementById("addDevice-modalWrap");
   const myModal = document.getElementById("addDevice-myModal");
   const btn = document.getElementById("plus-button");
@@ -59,6 +72,11 @@ function openModal(imageSrc) {
 function confirmYes() {
   var deviceName = document.getElementById("addDevice-deviceName").innerHTML;
   localStorage.setItem(deviceName, localStorage.getItem(deviceName) + 1);
+  if (deviceName == "냉장고") {
+    refridgerator.style.visibility = "visible";
+  } else if (deviceName == "세탁기") {
+    washingMachine.style.visibility = "visible";
+  }
   closeModal();
 }
 

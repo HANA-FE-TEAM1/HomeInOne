@@ -7,13 +7,11 @@
 }
 html {
   font-family: "IBMPlexSansKR-Regular";
-  background-color: rgb(233, 233, 233);
+  background-color: #EFFAFF;
 }
 .wrapper {
   display: flex;
   justify-content: center;
-}
-.header {
 }
 .container {
   width: 90%;
@@ -28,9 +26,6 @@ html {
   display: flex;
   width: 100%;
   justify-content: center;
-  /* background-color: #7474749d; 
-  /* position: fixed;
-    top: 0; */
   padding: 10px;
   border-radius: 0;
   margin: 0;
@@ -58,11 +53,20 @@ html {
   border-radius: 10px;
   width: calc(100%-20px);
   margin-bottom: 1%;
+
+}
+.white-card-slider {
+  background-color: #F9FFFE;
+  border-radius: 10px;
+  width: calc(100%-20px);
+  margin-bottom: 1%;
+  box-shadow: 0 2rem 2rem -2rem hsl(200 50% 20% / 40%);
 }
 .white-card-header {
   padding: 22px 30px;
 }
-.main-title {
+.main-title-slider {
+  
 }
 .white-card-body {
   padding: 5px 30px 30px;
