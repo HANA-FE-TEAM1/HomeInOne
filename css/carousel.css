@@ -296,3 +296,7 @@ input[type="radio"]:checked {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3), 0 2px 2px rgba(0, 0, 0, 0.2);
   transform: translate3d(-20%, 0, -100px);
 }
+
+#slider label >.plus-button {
+  width: 40%;
+}

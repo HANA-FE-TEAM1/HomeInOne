@@ -72,13 +72,7 @@ function openModal(imageSrc) {
 function confirmYes() {
   var deviceName = document.getElementById("addDevice-deviceName").innerHTML;
   localStorage.setItem(deviceName, localStorage.getItem(deviceName) + 1);
-  if (deviceName == "냉장고") {
-    refridgerator.style.visibility = "visible";
-  } else if (deviceName == "세탁기") {
-    washingMachine.style.visibility = "visible";
-  }
-
-  console.log("@@@@");
+  updateScreen();
   closeModal();
   modal.style.display = "none";
 }
@@ -91,4 +85,20 @@ function confirmNo() {
 function closeModal() {
   var modal = document.getElementById("addDevice-myModal");
   modal.style.display = "none";
+}
+
+// 화면 업데이트 함수
+function updateScreen() {
+  // localStorage에 따라 화면 상태 업데이트
+  if (localStorage.getItem("냉장고")) {
+    refridgerator.style.visibility = "visible";
+  }
+  if (localStorage.getItem("세탁기")) {
+    washingMachine.style.visibility = "visible";
+  }
+  if (!(localStorage.getItem("냉장고")) || !(localStorage.getItem("세탁기"))) {
+    plus.style.visibility = "visible";
+  } else {
+    plus.style.visibility = "hidden";
+  }
 }
