@@ -1,4 +1,3 @@
-
 /*모달에어컨 창*/
 
 #modalAircon {
@@ -20,6 +19,64 @@
   padding: 30px 30px;
   margin: 0 auto;
 }
+#modalHumidity {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 50px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  display: none;
+}
+/* 모달 팝업 사이즈는 아래 css 수정하면 됩니다. */
+#modalHumidityBody {
+  width: 450px; /* Full width */
+  height: 480px;
+  padding: 30px 30px;
+  margin: 0 auto;
+}
+#modalRefridgerator {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 50px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  display: none;
+}
+/* 모달 팝업 사이즈는 아래 css 수정하면 됩니다. */
+#modalRefridgeratorBody {
+  width: 450px; /* Full width */
+  height: 480px;
+  padding: 30px 30px;
+  margin: 0 auto;
+}
+
+#modalWashingMachine {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 50px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  display: none;
+}
+/* 모달 팝업 사이즈는 아래 css 수정하면 됩니다. */
+#modalWashingMachineBody {
+  width: 450px; /* Full width */
+  height: 480px;
+  padding: 30px 30px;
+  margin: 0 auto;
+}
 
 .switch-container {
   position: absolute;
@@ -36,9 +93,9 @@
 }
 
 .switch input {
-  top: 0; 
-  right: 0; 
-  bottom: 0; 
+  top: 0;
+  right: 0;
+  bottom: 0;
   left: 0;
   opacity: 0;
   z-index: 100;
@@ -49,7 +106,7 @@
   border-radius: 100px;
 }
 .switch.demo4 {
-  margin-top:0;
+  margin-top: 0;
   position: relative;
   width: 50px;
   height: 50px;
@@ -74,11 +131,9 @@
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 
-  text-shadow: 0 2px 1px rgba(0,0,0,0.25);
-  box-shadow:
-    inset 0 2px 3px rgba(255,255,255,0.13),
-    0 1px 2px rgba(0,0,0,0.3),
-    0 2px 2px 2px rgba(0,0,0,0.3);
+  text-shadow: 0 2px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.13),
+    0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 2px 2px rgba(0, 0, 0, 0.3);
   z-index: -1;
 }
 
@@ -89,7 +144,7 @@
     0 3px 10px 4px rgba(0,0,0,0.2); */
   color: #43a100;
   border-radius: 100px;
-} 
+}
 
 .switch.demo4 .icon-off:after {
   content: "";
@@ -147,7 +202,7 @@ input[type="radio"]:checked {
   opacity: 1;
 }
 
-#slider >label {
+#slider > label {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -249,4 +304,3 @@ input[type="radio"]:checked {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3), 0 2px 2px rgba(0, 0, 0, 0.2);
   transform: translate3d(-20%, 0, -100px);
 }
-
