@@ -1,7 +1,3 @@
-// const myDevice = localStorage.getItem()
-// if (myDevice == '냉장고') {
-
-// }
 
 // const buttonRipple = document.querySelector('.ripple-button');
 
@@ -24,8 +20,29 @@
 //     }, 1000);
 // })
 
-const powerSwitch = document.getElementById('power')
+
+const powerSwitch1 = document.getElementById('power1')
 addEventListener('click', (e) => {
-    const power = powerSwitch.checked ? 'On' : 'Off';
+    const power = powerSwitch1.checked ? 'On' : 'Off';
     console.log(power);
+})
+const powerSwitch2 = document.getElementById('power1')
+addEventListener('click', (e) => {
+    const power = powerSwitch2.checked ? 'On' : 'Off';
+    console.log(power);
+})
+const powerSwitch3 = document.getElementById('power1')
+addEventListener('click', (e) => {
+    const power = powerSwitch3.checked ? 'On' : 'Off';
+    console.log(power);
+})
+const powerSwitch4 = document.getElementById('power1')
+addEventListener('click', (e) => {
+    const power = powerSwitch4.checked ? 'On' : 'Off';
+    console.log(power);
+})
+
+const addButton = document.getElementById('plus-button')
+addButton.addEventListener('click', (e) => {
+    
 })
