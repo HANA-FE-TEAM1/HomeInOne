@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
           console.log("null(-1)이 아니면 if문 들어옴");
           // 활성화된 토글 버튼 인덱스가 설정되어 있을 때만 실행
           for (var i = 0; i < 4; i++) {
-            console.log("for문 들어옴");
+            // console.log("for문 들어옴");
             localStorage.setItem(
               `power${i}`,
               localStorage.getItem(`device${index}_${i}`) == "true"
