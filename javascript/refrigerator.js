@@ -45,126 +45,39 @@ document.addEventListener("mouseup", () => {
 });
 
 // 루틴 선택 및 최대 하나의 토글만 허용
-document.addEventListener("DOMContentLoaded", function () {
-  const initialStates = [
-    [true, true, true, true], // 가습기
-    [true, true, true, true], // 냉장고
-    [true, true, true, true], // 세탁기
-    [true, true, true, true], // 에어컨
-  ];
-  for (var i = 0; i < 4; i++) {
-    for (var j = 0; j < 4; j++) {
-      // 초기 상태가 설정되지 않았을 경우에만 초기값 설정
-      if (localStorage.getItem(`device${i}_${j}`) === null) {
-        localStorage.setItem(`device${i}_${j}`, initialStates[i][j]);
-      }
-    }
-  }
+const toggleButton = document.querySelector(".toggle-button");
 
-  const toggleButtons = document.querySelectorAll(".toggle-button");
-  let activeIndex = localStorage.getItem("activeToggleButtonIndex");
-
-  // 페이지 로딩 시 로컬 스토리지에 저장된 활성화된 토글 버튼 상태 복원
-  if (activeIndex !== null) {
-    toggleButtons[activeIndex].classList.add("active");
-  }
-
-  toggleButtons.forEach((button, index) => {
-    // 페이지 로딩 시 로컬 스토리지에 저장된 각 버튼의 활성화 상태 복원
-    if (localStorage.getItem(`toggleButtonActive${index}`) === "true") {
-      button.classList.add("active");
-    }
-
-    button.addEventListener("click", function () {
-      // 버튼의 활성화 상태를 토글
-      if (button.classList.contains("active")) {
-        button.classList.remove("active");
-        localStorage.setItem(`toggleButtonActive${index}`, "false");
-      } else {
-        button.classList.add("active");
-        localStorage.setItem(`toggleButtonActive${index}`, "true");
-      }
-    });
+if (toggleButton) {
+  // 클릭 이벤트 핸들러 추가
+  toggleButton.addEventListener("click", function () {
+    // 토글 버튼의 상태를 변경
+    this.classList.toggle("active");
   });
-});
+} else {
+  console.error('No element with class "toggle-button" found');
+}
+// 토글 버튼을 선택
+const toggleButton2 = document.querySelector(".toggle-button2");
 
-// 루틴 수정 화면
-document.addEventListener("DOMContentLoaded", () => {
-  const routineModals = [
-    document.getElementById("routineModalWrap1"),
-    document.getElementById("routineModalWrap2"),
-    document.getElementById("routineModalWrap3"),
-    document.getElementById("routineModalWrap4"),
-  ];
-  const btns = document.querySelectorAll(".modeModifyButton");
-  const routineCloseBtns = document.querySelectorAll("#routineCloseBtn");
-  const modalContents = document.querySelectorAll("#modalContent");
-
-  const devices = ["가습기", "냉장고", "세탁기", "에어컨"];
-  let currentRoutineIndex = 0; // 현재 활성화된 루틴 인덱스
-
-  const loadToggles = (modalIndex) => {
-    modalContents[modalIndex].innerHTML = "";
-    devices.forEach((device, index) => {
-      const contentDiv = document.createElement("div");
-      contentDiv.classList.add("content");
-
-      const textSpan = document.createElement("span");
-      textSpan.textContent = device;
-
-      const toggleButton = document.createElement("div");
-      toggleButton.classList.add("toggle-button");
-      toggleButton.onclick = function () {
-        toggleDevice(currentRoutineIndex, index, modalIndex); // 현재 루틴 인덱스, 디바이스 인덱스, 모달 인덱스를 전달
-      };
-
-      if (
-        localStorage.getItem(`device${currentRoutineIndex}_${index}`) === "true"
-      ) {
-        toggleButton.classList.add("active");
-      }
-
-      contentDiv.appendChild(textSpan);
-      contentDiv.appendChild(toggleButton);
-      modalContents[modalIndex].appendChild(contentDiv);
-    });
-  };
-
-  const toggleDevice = (routineIndex, deviceIndex, modalIndex) => {
-    const currentState =
-      localStorage.getItem(`device${routineIndex}_${deviceIndex}`) === "true";
-    localStorage.setItem(
-      `device${routineIndex}_${deviceIndex}`,
-      `${!currentState}`
-    );
-    loadToggles(modalIndex);
-  };
-
-  // 각 버튼에 대해 이벤트 리스너 추가하고 인덱스 부여
-  btns.forEach((btn, index) => {
-    btn.setAttribute("data-index", index);
-    btn.onclick = () => {
-      currentRoutineIndex = parseInt(btn.getAttribute("data-device-index")); // 클릭된 버튼의 인덱스를 현재 루틴 인덱스로 설정
-      routineModals[index].style.display = "block";
-      loadToggles(index);
-    };
+if (toggleButton2) {
+  // 클릭 이벤트 핸들러 추가
+  toggleButton2.addEventListener("click", function () {
+    // 토글 버튼의 상태를 변경
+    this.classList.toggle("active");
   });
-  routineCloseBtns.forEach((btn) => {
-    btn.onclick = () => {
-      routineModals.forEach((modal) => {
-        modal.style.display = "none";
-      });
-    };
+} else {
+  console.error('No element with class "toggle-button" found');
+}
+
+// 토글 버튼을 선택
+const toggleButton3 = document.querySelector(".toggle-button3");
+
+if (toggleButton3) {
+  // 클릭 이벤트 핸들러 추가
+  toggleButton3.addEventListener("click", function () {
+    // 토글 버튼의 상태를 변경
+    this.classList.toggle("active");
   });
-});
-
-//잠금 버튼
-let lockButton = document.getElementById("lockButton");
-
-lockButton.addEventListener("click", function () {
-  if (lockButton.classList.contains("locked")) {
-    lockButton.classList.remove("locked");
-  } else {
-    lockButton.classList.add("locked");
-  }
-});
+} else {
+  console.error('No element with class "toggle-button" found');
+}
