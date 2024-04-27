@@ -124,3 +124,32 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   });
 });
+
+const toggles = document.querySelectorAll('.toggle-button')
+
+toggles.forEach((toggle) => {
+  toggle.onclick = () => {
+    console.log('토글 누름');
+    // 활성화된 토글 버튼 인덱스를 로컬 스토리지에서 가져옴
+    const activeToggleButtonIndex = localStorage.getItem(
+      "activeToggleButtonIndex"
+    );
+    console.log(activeToggleButtonIndex);
+    if (activeToggleButtonIndex != null) {
+      console.log("지피티이자식");
+      // 활성화된 토글 버튼 인덱스가 설정되어 있을 때만 실행
+      for (var i = 0; i < 4; i++) {
+        localStorage.setItem(
+          `power${i}`,
+          localStorage.getItem(`device${activeToggleButtonIndex}_${i}`) ===
+            "true"
+            ? "true"
+            : "false"
+        );
+      }
+  
+      // 예시로 `power0` ~ `power3`의 값을 콘솔에 출력
+      // console.log(power0, power1, power2, power3);
+    }
+  }
+});

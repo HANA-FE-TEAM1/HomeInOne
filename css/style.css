@@ -65,9 +65,12 @@ html {
 .white-card-header {
   padding: 22px 30px;
 }
-.main-title-slider {
-  
+.main-title-slider > p{
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 0;
 }
+
 .white-card-body {
   padding: 5px 30px 30px;
   overflow: hidden;
