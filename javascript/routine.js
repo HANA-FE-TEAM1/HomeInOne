@@ -61,20 +61,54 @@ document.addEventListener("DOMContentLoaded", () => {
   const devices = ["가습기", "냉장고", "세탁기", "에어컨"];
   let currentRoutineIndex = 0; // 현재 활성화된 루틴 인덱스
 
+  // const loadToggles = (modalIndex) => {
+  //   modalContents[modalIndex].innerHTML = "";
+  //   devices.forEach((device, index) => {
+  //     const contentDiv = document.createElement("div");
+  //     contentDiv.classList.add("content");
+
+  //     const textSpan = document.createElement("span");
+  //     textSpan.textContent = device;
+
+  //     const toggleButton = document.createElement("div");
+  //     toggleButton.classList.add("toggle-button");
+  //     toggleButton.onclick = function () {
+  //       toggleDevice(currentRoutineIndex, index, modalIndex);
+  //     };
+
+  //     if (localStorage.getItem(`device${modalIndex}_${index}`) === "true") {
+  //       toggleButton.classList.add("active");
+  //     }
+
+  //     contentDiv.appendChild(textSpan);
+  //     contentDiv.appendChild(toggleButton);
+  //     modalContents[modalIndex].appendChild(contentDiv);
+  //   });
   const loadToggles = (modalIndex) => {
     modalContents[modalIndex].innerHTML = "";
     devices.forEach((device, index) => {
+      // content 클래스가 적용된 div 생성
       const contentDiv = document.createElement("div");
       contentDiv.classList.add("content");
+      // contentDiv에 스타일 적용
+      contentDiv.style.display = "flex";
+      contentDiv.style.justifyContent = "space-between";
+      contentDiv.style.alignItems = "center";
+      contentDiv.style.marginBottom = "10px"; // 아래쪽으로 10px 마진 추가
 
+      // 디바이스 이름을 표시할 span 생성
       const textSpan = document.createElement("span");
       textSpan.textContent = device;
+      textSpan.style.padding = "0 10px"; // 양쪽으로 10px 패딩 추가
 
+      // toggle-button 클래스가 적용된 div 생성
       const toggleButton = document.createElement("div");
       toggleButton.classList.add("toggle-button");
       toggleButton.onclick = function () {
         toggleDevice(currentRoutineIndex, index, modalIndex); // 현재 루틴 인덱스, 디바이스 인덱스, 모달 인덱스를 전달
       };
+      // toggleButton에 스타일 적용
+      toggleButton.style.cursor = "pointer"; // 마우스 커서를 포인터로 변경
 
       if (localStorage.getItem(`device${modalIndex}_${index}`) === "true") {
         toggleButton.classList.add("active");
@@ -112,4 +146,33 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     };
   });
+});
+
+const toggles = document.querySelectorAll('.toggle-button')
+
+toggles.forEach((toggle) => {
+  toggle.onclick = () => {
+    console.log('토글 누름');
+    // 활성화된 토글 버튼 인덱스를 로컬 스토리지에서 가져옴
+    const activeToggleButtonIndex = localStorage.getItem(
+      "activeToggleButtonIndex"
+    );
+    console.log(activeToggleButtonIndex);
+    if (activeToggleButtonIndex != null) {
+      console.log("지피티이자식");
+      // 활성화된 토글 버튼 인덱스가 설정되어 있을 때만 실행
+      for (var i = 0; i < 4; i++) {
+        localStorage.setItem(
+          `power${i}`,
+          localStorage.getItem(`device${activeToggleButtonIndex}_${i}`) ===
+            "true"
+            ? "true"
+            : "false"
+        );
+      }
+  
+      // 예시로 `power0` ~ `power3`의 값을 콘솔에 출력
+      // console.log(power0, power1, power2, power3);
+    }
+  }
 });
