@@ -15,8 +15,8 @@
 }
 
 #addDevice-myModal {
-  width: 30%;
-  height: 45%;
+  width: calc(30vw);
+  height: calc(21vw);
   z-index: 2;
   top: 25%;
   left: 35%;
