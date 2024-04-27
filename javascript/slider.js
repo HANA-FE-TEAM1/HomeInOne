@@ -1,46 +1,33 @@
+const airconSwitch = document.getElementById('power1')
+const humidifierSwitch = document.getElementById('power2')
+const refridgeratorSwitch = document.getElementById('power3')
+const washingMachineSwitch = document.getElementById('power4')
 
-// const buttonRipple = document.querySelector('.ripple-button');
-
-// buttonRipple.addEventListener('click', function(e) {
-//     buttonRipple.classList.toggle("dark-mode");
-//     console.log('클릭됨');
-
-//     let x = e.clientX - e.target.offsetLeft;
-//     let y = e.clientY - e.target.offsetTop;
-
-//     let ripple = document.createElement('div');
-//     ripple.className = 'click-ripple';
-
-//     ripple.style.left = x + 'px';
-//     ripple.style.top = y + 'px';
-//     this.appendChild(ripple);
-
-//     setTimeout(() => {
-//         ripple.remove()
-//     }, 1000);
-// })
-
-
-const powerSwitch1 = document.getElementById('power1')
-addEventListener('click', (e) => {
-    const power = powerSwitch1.checked ? 'On' : 'Off';
-    console.log(power);
+// 로컬스토리지에서 
+window.addEventListener('DOMContentLoaded', () => {
+    airconSwitch.checked = localStorage.getItem('power3') === 'true';
+    humidifierSwitch.checked = localStorage.getItem('power0') === 'true';
+    refridgeratorSwitch.checked = localStorage.getItem('power1') === 'true';
+    washingMachineSwitch.checked = localStorage.getItem('power2') === 'true';
+});
+airconSwitch.addEventListener('click', (e) => {
+    const power1 = airconSwitch.checked ? 'true' : 'false';
+    localStorage.setItem('power3', power1);
 })
-const powerSwitch2 = document.getElementById('power1')
-addEventListener('click', (e) => {
-    const power = powerSwitch2.checked ? 'On' : 'Off';
-    console.log(power);
+humidifierSwitch.addEventListener('click', (e) => {
+    const power2 = humidifierSwitch.checked ? 'true' : 'false';
+    localStorage.setItem('power0', power2);
 })
-const powerSwitch3 = document.getElementById('power1')
-addEventListener('click', (e) => {
-    const power = powerSwitch3.checked ? 'On' : 'Off';
-    console.log(power);
+refridgeratorSwitch.addEventListener('click', (e) => {
+    const power3 = refridgeratorSwitch.checked ? 'true' : 'false';
+    localStorage.setItem('power1', power3);
 })
-const powerSwitch4 = document.getElementById('power1')
-addEventListener('click', (e) => {
-    const power = powerSwitch4.checked ? 'On' : 'Off';
-    console.log(power);
+washingMachineSwitch.addEventListener('click', (e) => {
+    const power4 = washingMachineSwitch.checked ? 'true' : 'false';
+    localStorage.setItem('power2', power4);
 })
+
+// 각 스위치에 대응하는 로컬 스토리지의 값을 가져와서 체크 여부를 설정.
 
 const addButton = document.getElementById('plus-button')
 addButton.addEventListener('click', (e) => {
