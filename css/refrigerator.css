@@ -1,0 +1,251 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /*교차축*/
+  justify-content: center; /*주축*/
+  background-color: rgb(255, 255, 255);
+  width: 430px;
+  height: 932px;
+}
+/*메인기능 모션 -- 냉장고 S*/
+.container {
+  max-width: 430px;
+  width: 100%;
+}
+
+body {
+  width: 430px;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: rgb(255, 255, 255);
+}
+.center {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slider {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  user-select: none;
+}
+.knob {
+  width: 220px;
+  height: 220px;
+  background: rgb(229, 241, 242);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+}
+.knob .rotator {
+  width: 180px;
+  height: 180px;
+  background: rgb(245, 245, 245);
+  border-radius: 50%;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2), inset 1px 2px 1px white,
+    2px -1px 1px rgba(0, 0, 0, 0.2), -1px 0px 1px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+.knob .text {
+  width: 40px;
+  height: 40px;
+  margin: 0 15px;
+  font-family: poppins;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(57, 55, 53);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pointer {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: calc(50% - 10px);
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transform-origin: 110px 10px;
+  transform: rotate(-45deg);
+}
+.pointer span {
+  font-size: 60px;
+  transform: rotate(180deg) translateX(15px);
+}
+circle {
+  fill: none;
+}
+circle:nth-child(1) {
+  stroke: rgba(0, 0, 0, 0.7);
+  stroke-width: 15px;
+  stroke-dasharray: 660;
+  transform-origin: center;
+  transform: rotate(135deg);
+  stroke-linecap: round;
+}
+circle:nth-child(2) {
+  stroke: rgb(2, 117, 232);
+  stroke-width: 15px;
+  stroke-dasharray: 880;
+  stroke-dashoffset: calc(880 - (660 * 0) / 100);
+  transform-origin: center;
+  transform: rotate(135deg);
+  stroke-linecap: round;
+}
+.section3 {
+  width: 430px;
+
+  display: flex;
+  flex-direction: cloumn;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+/*메이기능 모션 -- 냉장고 E*/
+
+/*냉장 온도 텍스트S*/
+#coolingText {
+  font-size: 35px;
+  font-weight: 200;
+  border-bottom: 1px solid black; /* 밑줄처럼 보이는 선 추가 */
+  padding-bottom: 5px; /* 선과 텍스트 사이의 간격 조절 */
+  line-height: 1; /* 텍스트의 높이 조절 */
+}
+
+.section2 {
+  width: 430px;
+  padding-bottom: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+/*냉장온도 텍스트 E*/
+
+/*냉장고 모드별 토글 선택 S*/
+/*급속 냉동 S*/
+.section4 {
+  width: 300px;
+}
+.sub1,
+.sub2,
+.sub3,
+.sub4 {
+  padding-bottom: 10px;
+}
+
+.routine_header {
+  padding: 2px 0px 0px 30px;
+}
+#routineBoxTitle {
+  font-size: 16px;
+  margin-bottom: 0px;
+}
+
+.routine-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2열 */
+  grid-template-rows: 1fr 1fr; /* 2행 */
+  gap: 5px; /* 박스 사이의 간격 */
+  width: 90%; /* 컨테이너의 너비, 필요에 따라 조정 */
+  max-width: 400px; /* 최대 너비, 필요에 따라 조정 */
+  margin: auto; /* 중앙 정렬 */
+  padding: 10px;
+}
+
+.routine_box {
+  background-color: #daf1ec; /* 박스의 배경색 */
+  border: 1px solid #ddd; /* 박스의 테두리 */
+  display: flex;
+  align-items: center; /* 내용물 수직 중앙 정렬 */
+  justify-content: space-between; /* 내용물 수평 중앙 정렬 */
+  padding: 20px; /* 박스 내부 여백 */
+  border-radius: 10px;
+}
+
+#routineTitle {
+  font-size: 100%;
+  font-weight: bold;
+}
+.routineBoxWrapper2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modeModifyButton {
+  width: 20px;
+  height: 20px;
+  padding-top: 10px;
+}
+
+/* 토글 버튼 스타일 */
+.toggle-button {
+  height: 24px;
+  width: 48px;
+  background-color: #ddd;
+  border-radius: 24px;
+  cursor: pointer;
+  position: relative;
+}
+
+.toggle-button::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.toggle-button.active {
+  background-color: #4caf50;
+}
+
+.toggle-button.active::after {
+  left: 26px;
+}
+/*잠금버튼*/
+.lock-button {
+  background-image: url("/images/unlock.svg");
+  background-color: #4caf50;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: filter 0.5s ease; /* transition 속성 추가 */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.lock-button.active {
+  filter: hue-rotate(0deg); /* 기본 상태 */
+}
+
+.lock-button.locked {
+  background-image: url("/images/lock.svg");
+  filter: hue-rotate(-120deg); /* 활성화 상태 (빨간색) */
+}
+/*냉장고 모드별 토글 선택 E*/

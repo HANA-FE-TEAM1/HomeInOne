@@ -1,10 +1,59 @@
+let water = document.querySelector(".water");
+let increaseButton = document.querySelector("#decrease"); // 수정된 부분
+let decreaseButton = document.querySelector("#increase"); // 수정된 부분
+let restHumidityText = document.getElementById("resthumidity-text");
+
+increaseButton.addEventListener("click", () => {
+  let currentHeight = parseFloat(getComputedStyle(water, "::before").height);
+  if (isNaN(currentHeight)) {
+    currentHeight = 0;
+  }
+  water.style.setProperty(
+    "--before-after-height",
+    `${currentHeight / 16 + 1}rem`
+  );
+
+  // Increase the humidity level and update the text
+  let currentHumidity = parseInt(restHumidityText.textContent);
+  if (isNaN(currentHumidity)) {
+    currentHumidity = 0;
+  }
+  if (currentHumidity <= 100) {
+    // 수정된 부분
+    restHumidityText.textContent = `${currentHumidity - 10}%`;
+  }
+});
+
+decreaseButton.addEventListener("click", () => {
+  let currentHeight = parseFloat(getComputedStyle(water, "::before").height);
+  if (isNaN(currentHeight)) {
+    currentHeight = 0;
+  }
+  if (currentHeight > 0) {
+    water.style.setProperty(
+      "--before-after-height",
+      `${currentHeight / 16 - 1}rem`
+    );
+  }
+
+  // Decrease the humidity level and update the text
+  let currentHumidity = parseInt(restHumidityText.textContent);
+  if (isNaN(currentHumidity)) {
+    currentHumidity = 0;
+  }
+  if (currentHumidity >= 0) {
+    // 수정된 부분
+    restHumidityText.textContent = `${currentHumidity + 10}%`;
+  }
+});
+
 // 루틴 선택 및 최대 하나의 토글만 허용
 document.addEventListener("DOMContentLoaded", function () {
   const initialStates = [
-    [true, true, false, true], // 가습기
-    [false, false, true, true], // 냉장고
-    [false, true, false, false], // 세탁기
-    [false, true, false, false], // 에어컨
+    [true, true, true, true], // 가습기
+    [true, true, true, true], // 냉장고
+    [true, true, true, true], // 세탁기
+    [true, true, true, true], // 에어컨
   ];
   for (var i = 0; i < 4; i++) {
     for (var j = 0; j < 4; j++) {
@@ -24,23 +73,19 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   toggleButtons.forEach((button, index) => {
-    button.addEventListener("click", function () {
-      // 현재 활성화된 버튼의 인덱스를 확인
-      const currentlyActiveIndex = localStorage.getItem(
-        "activeToggleButtonIndex"
-      );
+    // 페이지 로딩 시 로컬 스토리지에 저장된 각 버튼의 활성화 상태 복원
+    if (localStorage.getItem(`toggleButtonActive${index}`) === "true") {
+      button.classList.add("active");
+    }
 
-      // 같은 버튼을 다시 클릭하면 비활성화
-      if (currentlyActiveIndex === index.toString()) {
+    button.addEventListener("click", function () {
+      // 버튼의 활성화 상태를 토글
+      if (button.classList.contains("active")) {
         button.classList.remove("active");
-        localStorage.removeItem("activeToggleButtonIndex");
+        localStorage.setItem(`toggleButtonActive${index}`, "false");
       } else {
-        // 모든 버튼의 'active' 클래스 제거
-        toggleButtons.forEach((btn) => btn.classList.remove("active"));
-        // 클릭된 버튼에만 'active' 클래스 추가
         button.classList.add("active");
-        // 로컬 스토리지에 활성화된 버튼의 인덱스 저장
-        localStorage.setItem("activeToggleButtonIndex", index);
+        localStorage.setItem(`toggleButtonActive${index}`, "true");
       }
     });
   });

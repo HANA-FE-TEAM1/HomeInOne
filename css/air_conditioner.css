@@ -225,8 +225,8 @@ circle:nth-child(2) {
   width: 100px;
   height: 100px;
   margin: 5px;
-  background-color: #ececec;
-  border: 1px solid #ececec;
+  background-color: #daf1ec;
+  border: 1px solid #daf1ec;
   border-radius: 10px;
   font-size: 20px;
   font-weight: 200;
@@ -250,8 +250,8 @@ circle:nth-child(2) {
   width: 100px;
   height: 100px;
   margin: 5px;
-  background-color: #ececec;
-  border: 1px solid #ececec;
+  background-color: #daf1ec;
+  border: 1px solid #daf1ec;
   border-radius: 10px;
   font-size: 20px;
   font-weight: 200;
@@ -261,45 +261,50 @@ circle:nth-child(2) {
   font-size: 25px;
   font-weight: 200;
   padding: 10px;
+  padding-top: 25px;
   padding-bottom: 5px; /* 선과 텍스트 사이의 간격 조절 */
   line-height: 1.5;
 }
 
 .sub3 {
-  width: 300px;
-  height: 150px;
-}
-#windControl {
+  padding-top: 10px;
+  width: 322px;
+  height: 140px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
-  justify-content: flex-start;
-  width: 200px;
-  height: 150px;
-  position: relative;
+  justify-content: space-between;
 }
 
-#windControl .arrow {
-  position: absolute;
+.btnupdown {
+  background-color: #daf1ec;
   width: 50px;
-  height: 50px;
-  background-color: #ececec;
-  border: 1px solid #ececec;
-  border-radius: 15%;
-  font-size: 20px;
-  font-weight: 200;
+  height: 80px;
+  border-radius: 10px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+#increase {
+  background-color: #daf1ec;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333;
+  border-left: 0;
+  border-top: 0;
 
-#windControl .plus {
-  top: 0;
-  left: 5px;
+  transform: rotate(225deg);
 }
+#decrease {
+  background-color: #daf1ec;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333;
+  border-left: 0;
+  border-top: 0;
 
-#windControl .minus {
-  right: 90px;
+  transform: rotate(45deg);
 }
 
 .timer-text {
@@ -314,7 +319,7 @@ circle:nth-child(2) {
   padding: 10px;
   border: none;
   border-radius: 4px;
-  background-color: #ececec;
+  background: #daf1ec;
   font-size: 15px;
   color: #333;
 }
@@ -332,3 +337,17 @@ select {
 }
 
 /*세부기능 모드선택 -- S*/
+.button-clicked {
+  background-color: #00c5a3 !important; /* 원하는 색상 코드로 변경 */
+  color: #333; /* 원하는 텍스트 색상 코드로 변경 */
+  transition: 1s ease;
+}
+
+.button-unclicked {
+  transition: 1s ease;
+}
+
+.button-shadow {
+  box-shadow: 10px 10px 15px rgb(6, 191, 96);
+  transition: all 0.1s ease 0s;
+}

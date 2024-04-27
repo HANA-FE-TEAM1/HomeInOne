@@ -1,0 +1,291 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /*교차축*/
+  justify-content: center; /*주축*/
+  background-color: rgb(255, 255, 255);
+  width: 430px;
+  height: 932px;
+}
+
+/* S*/
+#coolingText {
+  font-size: 35px;
+  font-weight: 200;
+  border-bottom: 1px solid black; /* 밑줄처럼 보이는 선 추가 */
+  padding-bottom: 5px; /* 선과 텍스트 사이의 간격 조절 */
+  line-height: 1; /* 텍스트의 높이 조절 */
+}
+
+.section2 {
+  width: 430px;
+  padding-bottom: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.sub3 {
+  width: 300px;
+}
+
+/*습도조절*/
+.section3 {
+  width: 350px;
+  padding-bottom: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.water {
+  position: relative;
+  width: 160px;
+  height: 200px;
+  background-color: #80c5de;
+  box-shadow: inset 0 0 50px #1c637c;
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+}
+
+.water::before {
+  content: "";
+  width: 200%;
+  height: 200%;
+  background-color: #ececec;
+  position: absolute;
+  top: -150%;
+  left: -50%;
+  border-radius: 40%;
+  animation: anim 12s linear infinite;
+}
+
+.water::after {
+  content: "";
+  width: 204%;
+  height: 204%;
+  background-color: #ececec80;
+  position: absolute;
+  top: -150%;
+  left: -52%;
+  border-radius: 40%;
+  animation: anim 12s linear infinite;
+  animation-delay: 0.5s;
+}
+.water {
+  --before-after-height: 200%; /* 초기 높이 설정 */
+  border-radius: 15%;
+}
+
+.water::before,
+.water::after {
+  height: var(--before-after-height);
+  transition: height 0.3s ease; /* 애니메이션 효과 적용 */
+}
+
+@keyframes anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*잔여물표시*/
+.restwater {
+  font-size: 17px;
+  font-weight: bold;
+  padding: 10px;
+  padding-bottom: 5px; /* 선과 텍스트 사이의 간격 조절 */
+  line-height: 1;
+}
+a {
+  margin: 10px;
+  box-sizing: border-box;
+  position: relative;
+  padding: 20px 50px;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+a span {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-size: 20px;
+}
+a .liquid {
+  position: absolute;
+  left: 0;
+  top: -80px;
+  width: 100%;
+  height: 200px;
+  background-color: #4973ff;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+  transition: 0.5x;
+}
+a:hover .liquid {
+  animation: fillup 0.125s linear;
+  animation-fill-mode: forwards;
+}
+a .liquid:before,
+a .liquid:after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  background: #000;
+}
+a .liquid:before {
+  border-radius: 45%;
+  background: rgba(20, 20, 20, 1);
+  animation: slosh 5s linear infinite;
+}
+a .liquid:after {
+  border-radius: 40%;
+  background: rgba(20, 20, 20, 0.5);
+  animation: slosh 10s linear infinite;
+}
+@keyframes fillup {
+  0% {
+    top: -80px;
+  }
+  100% {
+    top: -120px;
+  }
+}
+@keyframes slosh {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
+/*토글 s*/
+.section4 {
+  width: 300px;
+}
+.sub1,
+.sub2,
+.sub3,
+.sub4 {
+  padding-bottom: 10px;
+}
+
+.routine_header {
+  padding: 2px 0px 0px 30px;
+}
+#routineBoxTitle {
+  font-size: 16px;
+  margin-bottom: 0px;
+}
+
+.routine-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2열 */
+  grid-template-rows: 1fr 1fr; /* 2행 */
+  gap: 5px; /* 박스 사이의 간격 */
+  width: 90%; /* 컨테이너의 너비, 필요에 따라 조정 */
+  max-width: 400px; /* 최대 너비, 필요에 따라 조정 */
+  margin: auto; /* 중앙 정렬 */
+  padding: 10px;
+}
+
+.routine_box {
+  background-color: #daf1ec; /* 박스의 배경색 */
+  border: 1px solid #ddd; /* 박스의 테두리 */
+  display: flex;
+  align-items: center; /* 내용물 수직 중앙 정렬 */
+  justify-content: space-between; /* 내용물 수평 중앙 정렬 */
+  padding: 20px; /* 박스 내부 여백 */
+  border-radius: 10px;
+}
+
+#routineTitle {
+  font-size: 100%;
+  font-weight: bold;
+}
+.routineBoxWrapper2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modeModifyButton {
+  width: 20px;
+  height: 20px;
+  padding-top: 10px;
+}
+
+/* 토글 버튼 스타일 */
+.toggle-button {
+  height: 24px;
+  width: 48px;
+  background-color: #ddd;
+  border-radius: 24px;
+  cursor: pointer;
+  position: relative;
+}
+
+.toggle-button::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.toggle-button.active {
+  background-color: #4caf50;
+}
+
+.toggle-button.active::after {
+  left: 26px;
+}
+/*토글 E*/
+
+/*가습기 습도설정 버튼*/
+.btnupdown {
+  background-color: #daf1ec;
+  width: 50px;
+  height: 80px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#increase {
+  background-color: #daf1ec;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333;
+  border-left: 0;
+  border-top: 0;
+
+  transform: rotate(225deg);
+}
+#decrease {
+  background-color: #daf1ec;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333;
+  border-left: 0;
+  border-top: 0;
+
+  transform: rotate(45deg);
+}
+/*가습기 습도설정 버튼 end*/

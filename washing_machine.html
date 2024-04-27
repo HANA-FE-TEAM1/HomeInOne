@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/washing_machine.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <title>세탁기</title>
+  </head>
+  <body>
+    <div id="container">
+      <section class="section section2">
+        <span id="coolingText">세탁 잔여 시간</span>
+      </section>
+      <section class="section section3">
+        <div id="countdown">
+          <div id="hours">00</div>:
+          <div id="minutes">00</div>:
+          <div id="seconds">00</div>
+        </div>
+        <div id = "start" class="checkbox-wrapper-16">
+          <label class="checkbox-wrapper">
+          <input type="checkbox" class="checkbox-input" />
+          <span class="checkbox-tile">
+          <span class="checkbox-icon">
+          <rect width="256" height="256" fill="none"></rect>
+          <polygon points="72 40 184 40 240 104 128 224 16 104 72 40" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></polygon>
+          <polygon points="177.091 104 128 224 78.909 104 128 40 177.091 104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></polygon>
+          <line x1="16" y1="104" x2="240" y2="104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></line>
+          </svg>
+          </span>
+          <span class="checkbox-label">세탁 시작</span>
+          </span>
+          </label>
+          </div>
+      </section>
+      <section class="section section4">
+        <div class="sub1">
+          <div class="modeselect-text">세탁 타입</div>
+          <div class="modeselect">
+            <div class="mode1">
+              <button class="button-unclicked">표준</button>
+            </div>
+            <div class="mode2">
+              <button class="button-unclicked">스피드</button>
+            </div>
+            <div class="mode3">
+              <button class="button-unclicked">섬세</button>
+            </div>
+          </div>
+        </div>
+        <div class="sub2">
+          <div class="windselect-text">탈수 강도</div>
+          <div class="windselect">
+            <div class="weak">
+              <button class="button-unclicked">약하게</button>
+            </div>
+            <div class="natural">
+              <button class="button-unclicked">보통</button>
+            </div>
+            <div class="strong">
+              <button class="button-unclicked">강하게</button>
+            </div>
+          </div>
+        </div>
+        <div class="sub3">
+      
+        </div>
+        <div class="sub4">
+          <div class="timer-text">시간</div>
+          <select name="timer" id="timer">
+            <option value="0">없음</option>
+            <option value="1">10</option>
+            <option value="2">20</option>
+            <option value="3">30</option>
+            <option value="6">60</option>
+            <option value="12">120</option>
+        </div>
+      </section>
+    </div>
+    <script src="javascript/washing_machine.js"></script>
+  </body>
+</html>
