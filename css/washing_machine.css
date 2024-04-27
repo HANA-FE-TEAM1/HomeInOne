@@ -252,11 +252,15 @@ select {
 /*세탁 버튼, 탈수 버튼 e*/
 
 #countdown {
+  margin-left: 5px;
   padding: 25px;
-  max-width: 350px;
+  max-width: 300px;
   width: 90%;
   text-align: center;
-  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 #hours,
 #minutes,
@@ -267,5 +271,6 @@ select {
   color: #3b3939;
 }
 #countdown .colon {
-  font-size: 55px; /* 원하는 크기로 조정하세요 */
+  font-size: 45px;
+  margin: 0%;
 }
