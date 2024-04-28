@@ -28,10 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
         activeIndex < toggleButtons.length
     ) {
         toggleButtons[activeIndex].classList.add("active");
-    } else {
-        console.error(
-            "activeIndex is out of range or toggleButtons array is empty."
-        );
     }
 
     toggleButtons.forEach((button, index) => {
@@ -54,12 +50,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 // 로컬 스토리지에 활성화된 버튼의 인덱스 저장
                 localStorage.setItem("activeToggleButtonIndex", index);
 
-                console.log(index + "번 활성화");
+                // 페이지 새로고침으로 토글 on 시 가전제품 전원 상태 즉시 반영
+                window.location.reload();
                 if (index != -1) {
-                    // console.log("null(-1)이 아니면 if문 들어옴");
                     // 활성화된 토글 버튼 인덱스가 설정되어 있을 때만 실행
                     for (var i = 0; i < 4; i++) {
-                        // console.log("for문 들어옴");
                         localStorage.setItem(
                             `power${i}`,
                             localStorage.getItem(`device${index}_${i}`) ==
