@@ -256,11 +256,7 @@ select {
   margin: 0%;
 }
 
-.checkbox-label::before {
-  content: "세탁 시작";
-}
-
-.checkbox-label.washing::before {
+.washing {
   content: "세탁 중지";
   color: #00c5a3; /* 원하는 색상 코드로 변경 */
 }
