@@ -46,6 +46,12 @@ startButton.addEventListener("click", () => {
   setTimeout(() => {
     timerValueInput.value = "0"; // 1초 후 timerValueInput 값을 0으로 설정
   }, 1000);
+
+  // checkbox-label에 새로운 클래스를 추가하거나 제거
+  const checkboxLabel = document.getElementById("startlaundry");
+  if (checkboxLabel) {
+    checkboxLabel.classList.toggle("washing");
+  }
 });
 
 /*세탁타입 선택*/
