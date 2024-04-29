@@ -1,7 +1,7 @@
-const airconSwitch = document.getElementById('power1')
-const humidifierSwitch = document.getElementById('power2')
-const refridgeratorSwitch = document.getElementById('power3')
-const washingMachineSwitch = document.getElementById('power4')
+const airconSwitch = document.getElementById('aircon-power')
+const humidifierSwitch = document.getElementById('humid-power')
+const refridgeratorSwitch = document.getElementById('refridge-power')
+const washingMachineSwitch = document.getElementById('washing-power')
 
 // 각 스위치에 대응하는 로컬 스토리지의 값을 가져와서 체크 여부를 설정.
 window.addEventListener('DOMContentLoaded', () => {
