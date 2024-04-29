@@ -57,6 +57,7 @@ html {
   width: calc(100%-20px);
   margin-bottom: 1%;
   box-shadow: 0 2rem 2rem -2rem hsl(200 50% 20% / 40%);
+}
 
 .white-card-slider {
   background-color: #f9fffe;
