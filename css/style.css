@@ -117,3 +117,7 @@ html {
 .header-inner:hover > #logo-image {
   opacity: 0;
 }
+
+embed {
+  border-radius: 15px;
+}
