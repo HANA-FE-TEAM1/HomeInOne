@@ -1,0 +1,92 @@
+.switch-container {
+    z-index: 100;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+  }
+  
+  .switch label {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: block;
+    border-radius: 100px;
+  }
+  
+  .switch input {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 100;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 100px;
+  }
+  .switch.demo4 {
+    margin-top: 0;
+    position: relative;
+    width: 50px;
+    height: 50px;
+  }
+  .switch.demo4 label {
+    background: #b2ac9e;
+    background: -moz-linear-gradient(#f7f2f6, #b2ac9e);
+    background: -ms-linear-gradient(#f7f2f6, #b2ac9e);
+    background: -o-linear-gradient(#f7f2f6, #b2ac9e);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#f7f2f6), to(#b2ac9e));
+    background: -webkit-linear-gradient(#f7f2f6, #b2ac9e);
+    background: linear-gradient(#f7f2f6, #b2ac9e);
+    position: relative;
+    color: #a5a39d;
+    font-size: 40px;
+    text-align: center;
+    line-height: 50px;
+  
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+  
+    text-shadow: 0 2px 1px rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.13),
+      0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 2px 2px rgba(0, 0, 0, 0.3);
+    z-index: -1;
+  }
+  
+  .switch.demo4 input:checked ~ label {
+    /* box-shadow:
+      inset 0 2px 3px rgba(255,255,255,0.13),
+      0 5px 8px rgba(0,0,0,0.35),
+      0 3px 10px 4px rgba(0,0,0,0.2); */
+    color: #43a100;
+    border-radius: 100px;
+  }
+  
+  .switch.demo4 .icon-off:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    left: 50%;
+    top: 50%;
+    z-index: -1;
+    margin: -35% 0 0 -35%;
+    border-radius: 100px;
+    background: #d2cbc3;
+    background: -moz-linear-gradient(#cbc7bc, #d2cbc3);
+    background: -ms-linear-gradient(#cbc7bc, #d2cbc3);
+    background: -o-linear-gradient(#cbc7bc, #d2cbc3);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#cbc7bc), to(#d2cbc3));
+    background: -webkit-linear-gradient(#cbc7bc, #d2cbc3);
+    background: linear-gradient(#cbc7bc, #d2cbc3);
+    /* box-shadow:
+      0 -2px 5px rgba(255,255,255,0.05),
+      0 2px 5px rgba(255,255,255,0.1); */
+  }
+  
