@@ -46,6 +46,9 @@ html {
   flex: 0 0 auto;
   width: 28.33333333%;
   margin: 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .white-card {
@@ -53,10 +56,7 @@ html {
   border-radius: 10px;
   width: calc(100%-20px);
   margin-bottom: 1%;
-}
-.routine{
-  margin-top: 5%;
-}
+
 .white-card-slider {
   background-color: #f9fffe;
   border-radius: 10px;
