@@ -54,6 +54,9 @@ html {
   width: calc(100%-20px);
   margin-bottom: 1%;
 }
+.routine{
+  margin-top: 5%;
+}
 .white-card-slider {
   background-color: #f9fffe;
   border-radius: 10px;
