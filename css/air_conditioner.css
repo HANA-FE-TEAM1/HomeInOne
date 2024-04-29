@@ -7,11 +7,12 @@
 }
 
 #container {
+  padding-top: 5%;
   display: flex;
   flex-direction: column;
   align-items: center; /*교차축*/
   justify-content: center; /*주축*/
-  background-color: rgb(255, 255, 255);
+  background-color: #DAF1EC;
   width: 430px;
   height: 932px;
   font-family: "IBMPlexSansKR-Regular";
@@ -21,7 +22,26 @@
   max-width: 430px;
   width: 100%;
 }
-
+.frame {
+  padding: 5%;
+  border-radius: 20px 20px 0 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /*교차축*/
+  justify-content: center; /*주축*/
+}
+.app-name {
+  margin-top: 5%;
+  padding-bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /*교차축*/
+  justify-content: center; /*주축*/  
+}
+.app-name > span {
+  font-size: 30px;
+}
 body {
   width: 430px;
   height: 100vh;
