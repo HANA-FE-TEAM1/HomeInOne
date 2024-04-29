@@ -1,3 +1,10 @@
+html {
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+  background-color: white;
+}
 #container {
   display: flex;
   flex-direction: column;
@@ -5,7 +12,8 @@
   justify-content: center; /*주축*/
   background-color: rgb(255, 255, 255);
   width: 430px;
-  height: 932px;
+  height: 950px;
+  overflow-x: hidden;
 }
 
 /* S*/

@@ -15,14 +15,20 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="./css/switch.css">
+    <link rel="stylesheet" href="./css/font-awesome.css" />
     <title>DetailedPage</title>
   </head>
   <body>
     <div id="container">
+      <div class="switch-container">
+        <div class="switch demo4">
+          <input id="aircon-power" type="checkbox"/>
+          <label><i class="icon-off"></i></label>
+        </div>
+      </div>
       <section class="section section2">
         <span id="coolingText">냉방</span>
-       
       </section>
       <section class="section section3">
         <div class="center">
@@ -121,5 +127,6 @@
     </div>
     <script src="javascript/air_conditioner.JS"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="javascript/switch.js"></script>
   </body>
 </html>
