@@ -1,7 +1,14 @@
 .switch-container {
     z-index: 100;
     position: absolute;
-    top: 20%;
+    top: 5%;
+    right: 5%;
+  }
+  
+.switch-container-1 {
+    z-index: 100;
+    position: absolute;
+    top: 22%;
     right: 5%;
   }
   

@@ -18,17 +18,21 @@
   </head>
   <body>
     <div id="container">
-      <div class="switch-container">
-        <div class="switch demo4">
-          <input onclick="humidOn()" id="humid-power" type="checkbox"/>
-          <label><i class="icon-off"></i></label>
-        </div>
+      <div class="app-name">
+        <span>가습기</span>
       </div>
-      <section class="section section2">
-        <span id="coolingText">습도 설정</span>
-      </section>
-      <section class="section section3">
-        <div id="resthumidity-text">50%</div>
+      <div class="frame">
+        <section class="section section2">
+          <span id="coolingText">습도 설정</span>
+        </section>
+        <section class="section section3">
+          <div class="switch-container-1">
+            <div class="switch demo4">
+              <input onclick="humidOn()" id="humid-power" type="checkbox"/>
+              <label><i class="icon-off"></i></label>
+            </div>
+          </div>
+          <div id="resthumidity-text">50%</div>
         <div class="water"></div>
         <div class="btnupdown">
           <button id="increase"></button>
@@ -78,7 +82,8 @@
         </div>
       </section>
     </div>
+    </div>
     <script src="javascript/humidifier.js"></script>
-    <script src="javascript/switch.js"></script>
+    <script src="javascript/switchHum.js"></script>
   </body>
 </html>

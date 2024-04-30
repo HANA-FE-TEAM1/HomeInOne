@@ -1,16 +1,16 @@
-// 각 스위치에 대응하는 로컬 스토리지의 값을 가져와서 체크 여부를 설정.
-const airconSwitch0 = document.getElementById('aircon-power')
-
+const washingMachineSwitch0 = document.getElementById('washing-power')
 
 function updateSwitchState(switchElement, storageKey) {
     switchElement.checked = localStorage.getItem(storageKey) === 'true';
 }
+
 window.addEventListener('DOMContentLoaded', () => {
-    updateSwitchState(airconSwitch0, 'power3');
+    updateSwitchState(washingMachineSwitch0, 'power2');
 });
-function airconOn() {
-    localStorage.setItem('power3', airconSwitch0.checked.toString());
+function washingOn() {
+    localStorage.setItem('power2', washingMachineSwitch0.checked.toString());
 }
+
 window.addEventListener('storage', (event) => {
     if (event.key === 'power0') {
         updateSwitchState(humidifierSwitch0, 'power0');
