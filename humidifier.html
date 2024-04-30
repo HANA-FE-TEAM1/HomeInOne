@@ -12,11 +12,18 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet" />
-
+    <link rel="stylesheet" href="./css/switch.css">
+    <link rel="stylesheet" href="./css/font-awesome.css" />
     <title>가습기</title>
   </head>
   <body>
     <div id="container">
+      <div class="switch-container">
+        <div class="switch demo4">
+          <input onclick="humidOn()" id="humid-power" type="checkbox"/>
+          <label><i class="icon-off"></i></label>
+        </div>
+      </div>
       <section class="section section2">
         <span id="coolingText">습도 설정</span>
       </section>
@@ -72,5 +79,6 @@
       </section>
     </div>
     <script src="javascript/humidifier.js"></script>
+    <script src="javascript/switch.js"></script>
   </body>
 </html>

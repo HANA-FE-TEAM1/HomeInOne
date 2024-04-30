@@ -1,13 +1,20 @@
+@font-face {
+  font-family: Digital-7;
+  src: url(../font/digital-7.regular.ttf);
+}
+@font-face {
+  font-family: "IBMPlexSansKR-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 html {
   overflow-x: hidden;
 }
 body {
   margin: 0;
   background-color: white;
-}
-@font-face {
-  font-family: Digital-7;
-  src: url(../font/digital-7.regular.ttf);
 }
 #container {
   display: flex;
@@ -17,6 +24,7 @@ body {
   background-color: rgb(255, 255, 255);
   width: 430px;
   height: 932px;
+  font-family: "IBMPlexSansKR-Regular";
 }
 /*메인기능 모션 -- 세탁기 S*/
 #countdown {
@@ -171,6 +179,8 @@ select {
 }
 .checkbox-wrapper-16 .checkbox-input:checked + .checkbox-tile {
   border-color: #2260ff;
+  background-color: rgb(84, 84, 255);
+  content: '세탁 중지';
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   color: #2260ff;
 }
@@ -182,7 +192,8 @@ select {
 }
 .checkbox-wrapper-16 .checkbox-input:checked + .checkbox-tile .checkbox-icon,
 .checkbox-wrapper-16 .checkbox-input:checked + .checkbox-tile .checkbox-label {
-  color: #2260ff;
+  color: white;
+  content: '세탁 중지';
 }
 .checkbox-wrapper-16 .checkbox-input:hover + .checkbox-tile {
   border-color: #2260ff;
@@ -207,8 +218,6 @@ select {
   transition: 0.15s ease;
   cursor: pointer;
   position: relative;
-}
-.checkbox-wrapper-16 .checkbox-tile:before {
 }
 .checkbox-wrapper-16 .checkbox-tile:hover {
   border-color: #2260ff;
