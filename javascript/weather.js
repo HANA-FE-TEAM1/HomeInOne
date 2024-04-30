@@ -23,14 +23,14 @@ const getDate = function () {
 };
 
 getJSON(
-  "http://api.openweathermap.org/data/2.5/weather?q=seoul&appid=1eb1d18602c0e2dde562cdc2005a4495&units=metric&lang=kr",
+  "https://api.openweathermap.org/data/2.5/weather?q=seoul&appid=1eb1d18602c0e2dde562cdc2005a4495&units=metric&lang=kr",
   function (err, data) {
     if (err !== null) {
       alert("예상치 못한 오류 발생." + err);
     } else {
       const currTemperature = (document.getElementById(
         "currTemparature"
-      ).innerHTML = data.main.temp);
+      ).innerHTML = data.main.temp.toFixed(1));
       const currHumidity = (document.getElementById("currHumidity").innerHTML =
         data.main.humidity);
       const currDescription = (document.getElementById(
