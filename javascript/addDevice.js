@@ -1,13 +1,12 @@
-
-var refridgerator = document.getElementById("slide3")
-var washingMachine = document.getElementById("slide5")
-var plus = document.getElementById("slide4")
+var refridgerator = document.getElementById("slide3");
+var washingMachine = document.getElementById("slide5");
+var plus = document.getElementById("slide4");
 const modal = document.getElementById("addDevice-modalWrap");
 var modalImg = document.getElementById("img01");
 document.addEventListener("DOMContentLoaded", () => {
-  localStorage.setItem("에어컨", 1)
-  localStorage.setItem("가습기", 1)
-  if (!(localStorage.getItem("냉장고")) || !(localStorage.getItem("세탁기"))) {
+  localStorage.setItem("에어컨", 1);
+  localStorage.setItem("가습기", 1);
+  if (!localStorage.getItem("냉장고") || !localStorage.getItem("세탁기")) {
     plus.style.visibility = "visible";
   }
   if (localStorage.getItem("냉장고")) {
@@ -26,22 +25,22 @@ document.addEventListener("DOMContentLoaded", () => {
   // 모달을 보여주는 이벤트 핸들러
   btn.onclick = () => {
     modal.style.display = "block";
-    modal.classList.remove("hide")
+    modal.classList.remove("hide");
   };
 
   // 모달을 닫는 이벤트 핸들러
   modalWrapcloseBtn.onclick = () => {
     // modal.style.display = "none";
-    modal.classList.add("hide")
+    modal.classList.add("hide");
   };
 
   // 모달 밖 클릭 시 모달 닫기
   window.onclick = (event) => {
     if (event.target == modal) {
       // modal.style.display = "none";
-      modal.classList.add("hide")
+      modal.classList.add("hide");
       myModal.style.display = "none";
-      myModal.classList.add("hide")
+      myModal.classList.add("hide");
     }
   };
 });
@@ -49,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Modal을 여는 함수
 function openModal(imageSrc) {
   var modal = document.getElementById("addDevice-myModal");
-  
+
   let deviceName = imageSrc.split("/")[1];
   if (deviceName == "air-conditioner.png") {
     deviceName = "에어컨";
@@ -72,7 +71,7 @@ function openModal(imageSrc) {
   document.getElementById("addDevice-deviceName").innerHTML = deviceName;
 
   modal.style.display = "block";
-  modal.classList.remove("hide")
+  modal.classList.remove("hide");
   modalImg.src = imageSrc;
 }
 
@@ -83,7 +82,7 @@ function confirmYes() {
   updateScreen();
   closeModal();
   // modal.style.display = "none";
-  modal.classList.add("hide")
+  modal.classList.add("hide");
 }
 
 // "No" 버튼을 클릭했을 때의 동작
@@ -94,7 +93,7 @@ function confirmNo() {
 function closeModal() {
   var modal = document.getElementById("addDevice-myModal");
   // modal.style.display = "none";
-  modal.classList.add("hide")
+  modal.classList.add("hide");
 }
 
 // 화면 업데이트 함수
@@ -106,7 +105,7 @@ function updateScreen() {
   if (localStorage.getItem("세탁기")) {
     washingMachine.style.visibility = "visible";
   }
-  if (!(localStorage.getItem("냉장고")) || !(localStorage.getItem("세탁기"))) {
+  if (!localStorage.getItem("냉장고") || !localStorage.getItem("세탁기")) {
     plus.style.visibility = "visible";
   } else {
     plus.style.visibility = "hidden";

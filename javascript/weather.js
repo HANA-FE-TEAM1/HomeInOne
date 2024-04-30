@@ -23,7 +23,7 @@ const getDate = function () {
 };
 
 getJSON(
-  "https://api.openweathermap.org/data/2.5/weather?q=seoul&appid=1eb1d18602c0e2dde562cdc2005a4495&units=metric&lang=kr",
+  "https://api.openweathermap.org/data/2.5/weather?q=Kwangmyŏng&appid=1eb1d18602c0e2dde562cdc2005a4495&units=metric&lang=kr",
   function (err, data) {
     if (err !== null) {
       alert("예상치 못한 오류 발생." + err);
