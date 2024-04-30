@@ -5,6 +5,8 @@ var plus = document.getElementById("slide4")
 const modal = document.getElementById("addDevice-modalWrap");
 var modalImg = document.getElementById("img01");
 document.addEventListener("DOMContentLoaded", () => {
+  localStorage.setItem("에어컨", 1)
+  localStorage.setItem("가습기", 1)
   if (!(localStorage.getItem("냉장고")) || !(localStorage.getItem("세탁기"))) {
     plus.style.visibility = "visible";
   }
@@ -24,18 +26,22 @@ document.addEventListener("DOMContentLoaded", () => {
   // 모달을 보여주는 이벤트 핸들러
   btn.onclick = () => {
     modal.style.display = "block";
+    modal.classList.remove("hide")
   };
 
   // 모달을 닫는 이벤트 핸들러
   modalWrapcloseBtn.onclick = () => {
-    modal.style.display = "none";
+    // modal.style.display = "none";
+    modal.classList.add("hide")
   };
 
   // 모달 밖 클릭 시 모달 닫기
   window.onclick = (event) => {
     if (event.target == modal) {
-      modal.style.display = "none";
+      // modal.style.display = "none";
+      modal.classList.add("hide")
       myModal.style.display = "none";
+      myModal.classList.add("hide")
     }
   };
 });
@@ -66,6 +72,7 @@ function openModal(imageSrc) {
   document.getElementById("addDevice-deviceName").innerHTML = deviceName;
 
   modal.style.display = "block";
+  modal.classList.remove("hide")
   modalImg.src = imageSrc;
 }
 
@@ -75,7 +82,8 @@ function confirmYes() {
   localStorage.setItem(deviceName, localStorage.getItem(deviceName) + 1);
   updateScreen();
   closeModal();
-  modal.style.display = "none";
+  // modal.style.display = "none";
+  modal.classList.add("hide")
 }
 
 // "No" 버튼을 클릭했을 때의 동작
@@ -85,7 +93,8 @@ function confirmNo() {
 
 function closeModal() {
   var modal = document.getElementById("addDevice-myModal");
-  modal.style.display = "none";
+  // modal.style.display = "none";
+  modal.classList.add("hide")
 }
 
 // 화면 업데이트 함수
