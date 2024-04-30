@@ -286,7 +286,7 @@ circle:nth-child(2) {
 }
 
 .lock-button.locked {
-  background-image: url("images/lock.svg");
+  background-image: url("https://hana-fe-team1.github.io/HomeInOne/images/lock.svg");
   filter: hue-rotate(-120deg); /* 활성화 상태 (빨간색) */
 }
 /*냉장고 모드별 토글 선택 E*/
