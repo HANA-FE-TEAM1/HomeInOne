@@ -29,7 +29,13 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
         toggleButtons[activeIndex].classList.add("active");
     }
-
+    const airconSwitch0 = document.getElementById('power1')
+    const humidifierSwitch0 = document.getElementById('power2')
+    const refridgeratorSwitch0 = document.getElementById('power3')
+    const washingMachineSwitch0 = document.getElementById('power4')
+    function updateSwitchState(switchElement, storageKey) {
+        switchElement.checked = localStorage.getItem(storageKey) === 'true';
+    }
     toggleButtons.forEach((button, index) => {
         button.addEventListener("click", function () {
             // 현재 활성화된 버튼의 인덱스를 확인
@@ -51,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 localStorage.setItem("activeToggleButtonIndex", index);
 
                 // 페이지 새로고침으로 토글 on 시 가전제품 전원 상태 즉시 반영
-                window.location.reload();
+                // window.location.reload();
                 if (index != -1) {
                     // 활성화된 토글 버튼 인덱스가 설정되어 있을 때만 실행
                     for (var i = 0; i < 4; i++) {
@@ -62,6 +68,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                 ? "true"
                                 : "false"
                         );
+                        if (i === 0) updateSwitchState(humidifierSwitch0, 'power0')
+                        else if (i === 1) updateSwitchState(refridgeratorSwitch0, 'power1');
+                        else if (i === 2) updateSwitchState(washingMachineSwitch0, 'power2');
+                        else if (i === 3) updateSwitchState(airconSwitch0, 'power3');
                     }
                 }
             }
@@ -142,14 +152,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 btn.getAttribute("data-device-index")
             ); // 클릭된 버튼의 인덱스를 현재 루틴 인덱스로 설정
             routineModals[index].style.display = "block";
+            routineModals[index].classList.remove("hide")
             loadToggles(index);
         };
     });
     routineCloseBtns.forEach((btn) => {
         btn.onclick = () => {
             routineModals.forEach((modal) => {
-                modal.style.display = "none";
+                // modal.style.display = "none";
+                modal.classList.add("hide")
             });
         };
     });
 });
+
