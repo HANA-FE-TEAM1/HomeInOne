@@ -3,6 +3,7 @@ var refridgerator = document.getElementById("slide3")
 var washingMachine = document.getElementById("slide5")
 var plus = document.getElementById("slide4")
 const modal = document.getElementById("addDevice-modalWrap");
+var modalImg = document.getElementById("img01");
 document.addEventListener("DOMContentLoaded", () => {
   if (!(localStorage.getItem("냉장고")) || !(localStorage.getItem("세탁기"))) {
     plus.style.visibility = "visible";
@@ -42,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Modal을 여는 함수
 function openModal(imageSrc) {
   var modal = document.getElementById("addDevice-myModal");
-  var modalImg = document.getElementById("img01");
+  
   let deviceName = imageSrc.split("/")[2];
   if (deviceName == "air-conditioner.png") {
     deviceName = "에어컨";
