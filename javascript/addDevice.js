@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function openModal(imageSrc) {
   var modal = document.getElementById("addDevice-myModal");
   
-  let deviceName = imageSrc.split("/")[2];
+  let deviceName = imageSrc.split("/")[1];
   if (deviceName == "air-conditioner.png") {
     deviceName = "에어컨";
   }
