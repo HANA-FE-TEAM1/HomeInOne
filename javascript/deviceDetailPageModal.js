@@ -18,11 +18,13 @@ window.onload = function () {
 
     btn.onclick = function () {
       modal.style.display = "block";
+      modal.classList.remove("hide")
     };
 
     window.addEventListener("click", function (event) {
       if (event.target == modal) {
-        modal.style.display = "none";
+        // modal.style.display = "none";
+        modal.classList.add("hide")
       }
     });
   }

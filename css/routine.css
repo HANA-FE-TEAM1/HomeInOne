@@ -80,8 +80,30 @@
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  transition: all 0.5s ease-in-out;
 }
-
+#routineModalWrap1.hide {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out, visibility 0s 0.4s; /* opacity에만 transition 적용 */
+}
+#routineModalWrap2.hide {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out, visibility 0s 0.4s; /* opacity에만 transition 적용 */
+}
+#routineModalWrap3.hide {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out, visibility 0s 0.4s; /* opacity에만 transition 적용 */
+}
+#routineModalWrap4.hide {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out, visibility 0s 0.4s; /* opacity에만 transition 적용 */
+}
 #modalPageTitle {
   font-size: 15px;
   font-weight: bold;

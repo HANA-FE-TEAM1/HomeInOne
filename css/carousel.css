@@ -11,6 +11,14 @@
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
   display: none;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  transition: all 0.5s ease-in-out;
+}
+#modalAircon.hide {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out, visibility 0s 0.4s; /* opacity에만 transition 적용 */
 }
 /* 모달 팝업 사이즈는 아래 css 수정하면 됩니다. */
 #modalAirconBody {
@@ -18,7 +26,10 @@
   height: 480px;
   padding: 30px 30px;
   margin: 0 auto;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
 }
+
 #modalHumidity {
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -30,6 +41,14 @@
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
   display: none;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  transition: all 0.5s ease-in-out;
+}
+#modalHumidity.hide {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out, visibility 0s 0.4s; /* opacity에만 transition 적용 */
 }
 /* 모달 팝업 사이즈는 아래 css 수정하면 됩니다. */
 #modalHumidityBody {
@@ -49,6 +68,14 @@
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
   display: none;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  transition: all 0.5s ease-in-out;
+}
+#modalRefridgerator.hide {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out, visibility 0s 0.4s; /* opacity에만 transition 적용 */
 }
 /* 모달 팝업 사이즈는 아래 css 수정하면 됩니다. */
 #modalRefridgeratorBody {
@@ -69,6 +96,14 @@
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
   display: none;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  transition: all 0.5s ease-in-out;
+}
+#modalWashingMachine.hide {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out, visibility 0s 0.4s; /* opacity에만 transition 적용 */
 }
 /* 모달 팝업 사이즈는 아래 css 수정하면 됩니다. */
 #modalWashingMachineBody {
@@ -208,4 +243,22 @@ input[type="radio"]:checked {
 
 #slider label >.plus-button {
   width: 40%;
+}
+
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
