@@ -22,7 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
     "addDevice-modalWrap-closeBtn"
   );
 
-  // 모달을 보여주는 이벤트 핸들러
+
+  // 모달을 보여주는 이벤트 핸들러 헤이
   btn.onclick = () => {
     modal.style.display = "block";
     modal.classList.remove("hide");
